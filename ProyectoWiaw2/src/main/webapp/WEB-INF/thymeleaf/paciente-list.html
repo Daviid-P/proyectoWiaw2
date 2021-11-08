@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/x-editable-bootstrap/1.5.1/css/bootstrap-editable.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<!-- Data Tables -->
+	<link th:href="@{webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	
+	<title>Listado de Pacientes.</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4> Listado de Pacientes.</h4>
+	
+	<table class="table table-bordered display" width="100%" id="tablePacientes">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>DNI</th>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Fecha Nacimineto</th>
+				<th>Email</th>
+				<th>Teléfono</th>
+				<th>CP - Dirección</th>
+				<th>Habitación</th>
+				<th>Activo</th>
+				<th sec:authorize="hasRole('ROLE_RECEPCIONISTA')">Doctor de Cabecera</th>
+				<th>Info doc. cab.</th>
+				<th sec:authorize="hasRole('ROLE_RECEPCIONISTA')">Visitas</th>
+				<th sec:authorize="hasRole('ROLE_DOCTOR')">Pruebas</th>
+				<th>Expediente</th>
+				<th sec:authorize="hasRole('ROLE_RECEPCIONISTA')">Dar Alta/Baja</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="paciente : ${pacientes}">
+				<td th:text="${paciente.id}"></td>
+				<td id="dni" th:text="${paciente.dni}"></td>
+				<td th:text="${paciente.nombre}"></td>
+				<td th:text="${paciente.apellidos}"></td>
+				<td th:text="${#temporals.format(paciente.fecha_nacimiento, 'dd/MM/yyyy')}"></td>
+				<td th:text="${paciente.email}"></td>
+				<td th:text="${paciente.telefono}"></td>
+				<td th:text="${paciente.codigoPostal} + ' - ' + ${paciente.direccion}"></td>
+				<td th:switch="${paciente.habitacion}">
+					<span th:case="null">No residente</span>
+					<span th:case="*" th:text="${paciente.habitacion}"></span>
+				</td>
+				<td th:if="${paciente.activo}" th:text="Activo" style="color: green;"></td>
+				<td th:if="${!paciente.activo}" th:text="Inactivo" style="color: red;"></td>
+				<td sec:authorize="hasRole('ROLE_RECEPCIONISTA')" th:switch="${paciente.doctorCabecera.contrato.fin}">
+					<div th:case="null" class="doctorCabecera">						
+						<a href="#" th:id="${paciente.id}" data-type="select" th:data-pk="${paciente.id}" data-value="" data-title="Select doctor cabecera" class="editable editable-click" style="color: green;" th:text="${paciente.doctorCabecera.dni}"></a>						
+					</div> 
+					<div  th:case="*" class="doctorCabecera">						
+						<a href="#" th:id="${paciente.id}" data-type="select" th:data-pk="${paciente.id}" data-value="" data-title="Select doctor cabecera" class="editable editable-click" style="color: red; " th:text="${paciente.doctorCabecera.dni}"></a>						
+					</div>
+				</td>
+				<td class="text-center faiconTable">
+					<a th:id="'infoCabecera' + ${paciente.id}" th:href="@{/doctor/{dni}(dni=${paciente.doctorCabecera.dni})}">
+						<div class="">
+							<i class="fa fa-user-md"></i>
+						</div>
+					</a>
+				</td>
+				<td sec:authorize="hasAnyRole('ROLE_RECEPCIONISTA', 'ROLE_DOCTOR')">
+					<a th:href="@{/visitasPaciente/{dni}(dni=${paciente.dni})}" class="btn btn-primary" sec:authorize="hasRole('ROLE_RECEPCIONISTA')">
+						<span class='fa fa-eye'></span> Visitas
+					</a>
+					<a th:href="@{/listPruebas/{dni}(dni=${paciente.dni})}" class="btn btn-primary" sec:authorize="hasRole('ROLE_DOCTOR')">
+						<span class='fa fa-flask'></span> Pruebas
+					</a>
+				</td>			
+				<td>
+					<a id="expediente" th:href="@{/expediente/{dni}(dni=${paciente.dni})}" class="btn btn-primary">
+						<span class='glyphicon glyphicon-list-alt'></span> Expediente
+					</a>
+				</td>
+				<td sec:authorize="hasRole('ROLE_RECEPCIONISTA')">
+					<a th:href="@{/baja/{dni}(dni=${paciente.dni})}" class="btn btn-warning" th:if="${paciente.activo == true && paciente.autoridades.size() == 1}">
+						<span class='fa fa-heartbeat'></span> Dar de Baja	
+					</a>
+					<a th:href="@{/alta/{dni}(dni=${paciente.dni})}" class="btn btn-success" th:if="${paciente.activo == false && paciente.autoridades.size() == 1}">
+						<span class='fa fa-heartbeat'></span> Dar de Alta	
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/x-editable-bootstrap/1.5.1/js/bootstrap-editable.min.js}"></script>
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+	<script th:inline="javascript">
+
+    var source = [[${doctoresCabeceraDni}]];
+
+	</script>
+
+	<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tablePacientes").DataTable({
+	    	"scrollX": true,
+	    	"scrollY": true
+	    });
+	} );
+	
+	//Xedit change doctor cabecera with AJAX
+	
+	//Pasem la info
+	//var source = [{'value': 1, 'text': 'fine'}, {'value': 2, 'text': 'bad'}];
+	
+	$('.doctorCabecera').editable({
+	    selector: 'a',
+	    url: "http://localhost:8080/proyectowiaw2/modDoctorCabecera/",
+	    name: 'docCabInfo',
+		success: function(response, newValue) {
+			oldValue = $(this)[0].innerText;
+			infoCabecera = $("#infoCabecera"+$(this).data('pk'))[0];
+			infoCabecera.href = infoCabecera.href.replace(oldValue,newValue);
+	    },
+	    'mode': 'inline',
+	    'source': function() {
+	        return source;
+	    }
+	});
+	
+	//Realitzem la petició de l'expedient amb ajax  
+	/*
+	$(document).ready(function(){
+		$("#expediente").click(function(){
+			var pathname = window.location.pathname.split("/");
+			var dni = pathname[pathname.length -1];
+			
+			$.ajax({
+				type:"GET	",
+				url: "http://localhost:8080/proyectowiaw2/expediente/"+dni,
+				charset:"UTF-8"
+			});
+			
+		});
+	});
+	*/
+	
+	</script>
+	
+	
+
+</body>
+</html>

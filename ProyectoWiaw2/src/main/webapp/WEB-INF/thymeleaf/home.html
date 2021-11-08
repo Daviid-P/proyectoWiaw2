@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<title>Home</title>
+</head>
+<body>
+
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-default navbar-fixed-top topnav my-nav" role="navigation">
+		<div class="container topnav">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo" href="#">Clínica Salut Vital</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#quiensomos">
+								Quién Somos
+							</a>
+						</li>
+						<li>
+							<a href="#asistencia">
+								Asistencia
+							</a>
+						</li>
+						<li>
+							<a href="#dondeestamos">
+								Dónde Estamos
+							</a>
+						</li>
+						<li>
+							<a href="#contactanos">
+								Contáctanos
+							</a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#login-modal" sec:authorize="isAnonymous()">
+								Login
+							</a>
+							<a th:href="@{/dash}" sec:authorize="!isAnonymous()">
+								Dashboard
+							</a>
+						</li>
+					</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+	
+	<!-- LOGIN -->
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+		<div class="loginmodal-container">
+			<h1>Inicia Sesión</h1><br>
+		<form class="form-signin" th:action="@{/login}" method='POST'>
+			<input type="text" name="dni" id="dni" class="form-control" placeholder="Dni" required/>
+			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required/>
+			<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+		 </form>
+					
+			<div class="login-help">
+    			<a th:href="${url}=='/inbox' ? 'https://accounts.google.com/signin/recovery' : @{/resetPassword}">Has olvidado tu contraseña?</a>
+	        </div>
+		</div>
+	</div>
+ </div>
+
+
+	<!--PORTADA / Carrousel-->
+	<header id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+
+		<div class="carousel-inner opac">
+			<div class="item active">
+				<div class="fill" style="background-image:url('resources/img/portada1.jpg');"></div>
+				<div class="fill sombra"></div>
+				<div class="carousel-caption">
+					<h2>Profesionales</h2>
+					<p>Contamos con los doctores mejor preparados.</p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill" style="background-image:url('resources/img/portada2.jpg');"></div>
+				<div class="carousel-caption">
+					<h2>Quirófano</h2>
+					<p>Disponemos de las mejores instalaciones quirúrgicas y del mejor equipo profesional.</p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill" style="background-image:url('resources/img/portada3.jpg');"></div>
+				<div class="carousel-caption">
+					<h2>Tecnología</h2>
+					<p>Estamos siempre a la última en innovaciones tecnológicas.</p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill" style="background-image:url('resources/img/portada4.jpg');"></div>
+				<div class="carousel-caption">
+					<h2>Asistencia</h2>
+					<p>Para nosotros el paciente siempre es lo primero.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="icon-next"></span>
+		</a>
+
+	</header>
+
+	<!-- CONOCENOS -->
+
+	<a  name="services"></a>
+	<div class="content-section-a" id="quiensomos">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-sm-6">
+					<hr class="section-heading-spacer">
+					<div class="clearfix"></div>
+					<h2 class="section-heading">Quién Somos</h2>
+					<p class="lead">
+						Nuestro modelo de gestión gira en torno a un sólido compromiso con la calidad, lo que nos hace apostar continuamente por la evolución tecnológica, contando siempre con los últimos avances e incorporando las técnicas médicas más modernas. A esto hay que unir la calidad y experiencia de la plantilla, que siempre ha estado compuesta por los mejores y más cualificados profesionales de cada especialidad, lo que nos permite ofrecer una atención integral.
+					</p>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+					<img class="img-responsive" th:src="@{resources/img/conocenos.jpg}" alt="Grupo de médicos">
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--ASISTENCIA-->
+
+	<div class="content-section-b" id="asistencia">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+					<hr class="section-heading-spacer">
+					<div class="clearfix"></div>
+					<h2 class="section-heading">Asistencia</h2>
+					<p class="lead">
+					Nuestra prioridad es siempre ofrecer el mejor trato a nuestros pacientes. Lo conseguimos gracias a la atención personalizada y la experiencia de nuestros facultativos.
+					</p>
+				</div>
+				<!--FEATURES-->
+				<div class="col-lg-5 col-sm-pull-6  col-sm-6">
+    				<div class="row">
+					<!-- /.feature 1 -->
+					<div class="col-sm-6 feat-list text-center">
+						<i class="fa fa-ambulance wow"></i>
+						<div class="inner text-center">
+							<h4>Rapidez</h4>
+							<p>Los conductores más experimentados siempre listos para ti.</p>
+						</div>
+					</div>
+
+					<!-- /.feature 2 -->
+					<div class="col-sm-6 feat-list text-center">
+						<i class="fa fa-stethoscope wow"></i>
+						<div class="inner text-center">
+							<h4>Experiencia</h4>
+							<p>Los profesionales mejor cualificados a tu plena disposición.</p>
+						</div>
+					</div>
+    				</div>
+					<div class="row">
+                      <!-- /.feature 3 -->
+                      <div class="col-sm-6 feat-list text-center">
+                          <i class="fa fa-eur wow"></i>
+                          <div class="inner text-center">
+                              <h4>Financiamiento</h4>
+                              <p>Financiamientos a medida, la salud es lo primero.</p>
+                          </div>
+                      </div>
+
+                      <!-- /.feature 4 -->
+                      <div class="col-sm-6 feat-list text-center">
+                          <i class="fa fa-medkit wow"></i>
+                          <div class="inner text-center">
+                              <h4>Equipamiento</h4>
+                              <p>Disponemos de las últimas innovaciones médicas al mejor precio.</p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-b -->
+	<!--DONDE ESTAMOS-->
+	<div class="content-section-a" id="dondeestamos">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-sm-6">
+					<hr class="section-heading-spacer">
+					<div class="clearfix"></div>
+					<h2 class="section-heading"><i class="fa fa-map-marker wow"></i> Dónde Estamos</h2>
+					<p class="lead">
+						Carrer de Sor Eulàlia d'Anzinzu.<br>
+						Número 45
+					</p>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+					<div id="map"></div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-a -->
+
+	<!--CONTACTANOS-->
+
+	<div class="content-section-b" id="contactanos">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+					<hr class="section-heading-spacer">
+					<div class="clearfix"></div>
+					<h2 class="section-heading">Contáctanos</h2>
+					<p class="lead">
+						Si tienes cualquier consulta, no dudes en escribirnos.
+						<address>
+							<a class="my-mail" href="mailto:#">salutvital@gmail.com</a>
+						</address>
+					</p>
+				</div>
+				<!--FEATURES-->
+				<div class="col-lg-5 col-sm-pull-6  col-sm-6">
+					<div class="">
+						<form th:action="@{/contactUs}" method="POST">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="name">
+											Nombre *</label>
+										<input type="text" class="form-control" name="name" id="name" placeholder="Nombre Apellidos" required="required" />
+									</div>
+									<div class="form-group">
+										<label for="email">
+											Email *</label>
+										<div class="input-group">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+											</span>
+											<input type="email" class="form-control" name="email" id="email" placeholder="Email" required="required" /></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="name">
+											Mensaje *</label>
+										<textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+											placeholder="Mensaje..."></textarea>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-success pull-right" id="btnContactUs">
+										Enviar
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+		<!-- /.container -->
+
+	<!--SOCIAL-->
+	<div class="banner" id="social">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-6">
+					<h2>Síguenos</h2>
+				</div>
+				<div class="col-lg-6 social text-center">
+	                <ul>
+	                    <li>
+		                    <a class="wow fadeInUp" href="https://www.facebook.com/" target="_blank" data-wow-delay="0.2s">
+		                    	<i class="fa fa-facebook"></i>
+		                    </a>
+	                    </li>
+	                                        <li><a class="wow fadeInUp" href="https://www.linkedin.com/" target="_blank" data-wow-delay="0.4s"><i class="fa fa-linkedin"></i></a></li>
+	                    <li><a class="wow fadeInUp" href="https://www.instagram.com/" target="_blank" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
+	                    <li><a class="wow fadeInUp" href="https://www.youtube.com/" target="_blank" data-wow-delay="0.8s"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.banner -->
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text center">
+					<div class="row text-center">
+						<p>Copyright &copy; 2017 Clínica Salut Vital. Todos los derechos reservados. Marca registrada &reg; </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery -->
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+
+<script>
+	  function initMap() {
+		var uluru = {lat: 41.391886, lng: 2.115604};
+		var map = new google.maps.Map(document.getElementById('map'), {
+		  zoom: 15  ,
+		  center: uluru
+		});
+		var marker = new google.maps.Marker({
+		  position: uluru,
+		  map: map
+		});
+	  }
+</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp1bX-koIRufmLNBy2bqY1zrP2Pyfcxgk&callback=initMap">
+	</script>
+
+</body>
+
+</html>

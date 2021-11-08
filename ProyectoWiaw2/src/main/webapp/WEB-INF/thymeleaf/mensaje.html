@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<title th:if="${warn}">Algo ha ido mal...</title>
+	<title th:if="${info}">Información</title>
+</head>
+<body class="container-fluid">	
+<!-- 	<div th:replace="templates/header :: header"></div> -->
+	
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="hero-unit center">
+          <h1 th:if="${error}">Error: <small><font face="Tahoma" color="red" th:text="${error}"></font></small></h1>
+          <h1 th:if="${info}">Info: <small><font face="Tahoma" color="lightblue" th:text="${info}"></font></small></h1>
+          <br />
+		  <ul class="list-group">
+			<li th:if="${error}" class="list-group-item list-group-item-danger" th:each="msg : ${mensajes}" th:utext="${msg}"></li>
+			<li th:if="${info}" class="list-group-item list-group-item-info" th:each="msg : ${mensajes}" th:utext="${msg}"></li>
+		  </ul>
+          <p><b>Para volver a donde estabas pulsa este botón:</b></p>
+          <a onClick="goBack()" class="btn btn-large btn-info"><i class="fa fa-arrow-left"></i> Atrás</a>
+        </div>
+        <br />  
+    </div>
+  </div>
+</div>
+
+
+	<!-- jQuery -->
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript">
+		function goBack() {
+		    window.history.back();
+		}	
+	</script>
+</body>
+</html>

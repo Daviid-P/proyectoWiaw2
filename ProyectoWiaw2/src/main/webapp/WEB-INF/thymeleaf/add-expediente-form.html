@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+#deceased{
+	background-color:#FFF3F5;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.remove_field{
+	float:right;	
+	cursor:pointer;
+	position : absolute;
+}
+.remove_field:hover{
+	text-decoration:none;
+}
+
+body{
+	font-family: 'Montserrat', serif;
+}
+
+.border-box{
+	outline: 1px solid black;
+}
+
+.glyphicon-remove{
+	right: 20px;
+	display: none;
+}
+
+.has-error .glyphicon-remove{
+	display: block !important;	
+}
+
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
+
+
+</style>
+	<title>Nuevo Expediente</title>
+</head>
+<body>
+<div th:replace="templates/header :: header"></div>
+
+<div class="panel panel-primary" style="margin:20px;">
+	<div class="panel-heading">
+			<h3 class="panel-title">Añadir Expediente</h3>
+	</div>
+<div class="panel-body">
+	<form id="formRegistro" method="post" action="#" th:action="@{/addExpediente}">	
+		<div class="col-md-12 col-sm-12">
+			<div class="row">
+				<h3>Datos Expediente</h5>
+				<div class="row">
+					<div class="form-group col-md-3 col-sm-3 genero has-feedback">
+						<label for="DOB">Genero*</label>
+						<input type="radio" class="" name="genero" value="H" id="genero">Hombre
+						<input type="radio" class="" name="genero" value="M" id="genero">Mujer
+						<input type="radio" class="" name="genero" value="O" id="genero">Otro
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-md-3 col-sm-3 ocupacion has-feedback">
+						<label for="DOB">Ocupación*</label>
+						<input type="text" class="form-control input-sm" name="ocupacion" id="ocupacion" placeholder="Ocupación">
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-md-6 col-sm-6 sueldo has-feedback">
+						<label for="sueldo">Alergias</label>
+						<input type="text" class="form-control input-sm" name="alergias" id="alergias" placeholder="Alergias">
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 col-sm-4 has-feedback">
+						<label for="sueldo">Alimentación*</label>
+						<input type="text" class="form-control input-sm" name="alimentacion" id="alimentacion" placeholder="Alimentacion">
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-md-4 col-sm-4 diasvacaciones has-feedback">
+						<label for="dias">Hábitos</label>
+						<input type="text" class="form-control input-sm" name="habitos" id="habitos" placeholder="Habitos" >
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-md-2 col-sm-2 has-feedback">
+						<label for="dias">Peso*</label>
+						<input type="text" class="form-control input-sm" name="peso" id="peso" placeholder="Peso en kg" >
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-md-2 col-sm-2 has-feedback">
+						<label for="dias">Hospitalizaciones*</label>
+						<input type="text" class="form-control input-sm" name="hospitalizaciones" id="hospitalizaciones" placeholder="Número de hospitalizaciones" >
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6 col-sm-6 has-feedback">
+						<label for="sueldo">Antecedentes Médicos</label>
+						<textarea class="form-control input-sm" name="antecedentesMedicos" rows="3" placeholder="Antecedentes Médicos de paciente"></textarea>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-md-6 col-sm-6 diasvacaciones has-feedback">
+						<label for="dias">Medicación</label>
+						<textarea class="form-control input-sm" name="medicacion" rows="3" placeholder="Medicación actual de paciente"></textarea>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+				</div>
+			</div>
+
+		<div class="col-md-12 col-sm-12" id="addblock">
+			<div class="form-group col-md-3 col-sm-3">
+				<input type='submit' class="btn btn-primary" value="Insertar"/>
+			</div>
+		</div>
+
+		</div>
+	</form>
+</div>
+
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<script type='text/javascript'>
+	$(function() {
+		//calendar call function
+		$('.datepicker').dcalendar();
+		$('.datepicker').dcalendarpicker();
+
+			var max_fields = 10; //maximum input boxes allowed
+			var x = 1; //initlal text box count
+		
+		$(document).on('click', '.remove_field', function(e){
+				e.preventDefault(); 
+			$(this).parent('div').remove(); 
+			x--;
+		});	
+	});
+
+//VALIDATION
+
+//No numbers
+jQuery.validator.addMethod("notNumber", function(value, element, param) {
+	var reg = /[0-9]/;
+	if(reg.test(value)){
+		return false;
+	}else{
+		return true;
+	}
+});
+
+//Is numeric
+jQuery.validator.addMethod("onlyNumbers", function(value, element, param) {
+	return jQuery.isNumeric(value);
+});
+
+$(function() {
+
+	$("form").validate({
+		//Custom error class for parent div of element
+		highlight: function(element) {
+			$(element).parent().addClass("has-error");
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass("has-error");
+		},
+		// Reglas de validación
+		rules: {
+			//EXPEDIENTE
+			genero: {
+				required: true
+			},
+			ocupacion: {
+				required: true
+			},
+			alimentacion: {
+				required: true
+			},
+			peso: {
+				required: true,
+				onlyNumbers: true
+			},
+			hospitalizaciones: {
+				required: true,
+				onlyNumbers: true
+			}
+		},
+		// Specify validation error messages
+		messages: {
+			genero: {
+				required: "Es necesario marcar un género"
+			},
+			ocupacion: {
+				required: "Es necesario marcar una ocupación"
+			},
+			alimentacion: {
+				required: "Es necesario que indiques tu tipo de alimentación"
+			},
+			peso: {
+				required: "Es necesario indicar tu peso en kg",
+				onlyNumbers: "El valor solo puede contener números"
+			},
+			peso: {
+				required: "Es necesario indicar el número de hospitalizaciones",
+				onlyNumbers: "El valor solo puede contener números"
+			}
+		},
+		// Make sure the form is submitted to the destination defined
+		// in the "action" attribute of the form when valid
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	});
+});
+
+	</script>
+</body>
+</html>

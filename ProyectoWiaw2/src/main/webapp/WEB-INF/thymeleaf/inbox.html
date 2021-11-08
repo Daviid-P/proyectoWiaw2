@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+	
+	<!-- Data Tables -->
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	<title>Inbox</title>
+	<style>
+		#sendMail {
+			position:absolute;
+			bottom:50px;
+			right:150px;
+			margin:0;
+			padding:5px 3px;
+			z-index: 999;
+			background: radial-gradient(ellipse farthest-corner at center center , #008FD5 0%, #00689B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+			border-color: #00689B;
+		}
+		
+		#roundSendMail {
+			border-radius: 25px;
+			background: radial-gradient(ellipse farthest-corner at center center , #008FD5 0%, #00689B 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+			border-color: #00689B;
+			min-width: 50px;
+			min-height: 50px;
+			align-self: center;
+			align-content: center;
+		}
+		
+	</style>
+</head>
+<body class="container-fluid">
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	
+	<h4>Inbox</h4>
+	<button id="sendMail" class="btn btn-lg btn-success" data-toggle="modal" data-target="#sendMailModal"><span class="glyphicon glyphicon-send"></span> Send</button>
+	
+	<div>
+		<table class="table table-bordered display" width="100%" id="emails">
+			<thead>
+				<tr>
+					<th>From:</th>
+					<th>Subject:</th>
+					<th>Date:</th>
+					<th>Contenido:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<span th:each="message,iter : ${messages}">
+					<tr data-toggle="modal" th:data-target="'#reply' + ${iter.index}">
+		 				<td th:text="${message.getMailFrom()}"></td>
+						<td th:text="${message.getShortSubject()}"></td>
+						<td th:text="${message.getMailSendDate()}"></td>
+						<td th:text="${message.getMailContentPreview()}"></td>
+					</tr>
+					<div th:id="'reply' + ${iter.index}" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+						
+						    <!-- Modal content-->
+						  <div class="modal-content">
+						    <div class="modal-header">
+						      <button type="button" class="close" data-dismiss="modal">&times;</button>
+						      <h4 class="modal-title">Responder correo</h4>
+						    </div>
+						    <div class="modal-body">
+						     <form role="form" class="form-horizontal" th:action="@{/sendMail}" method="POST">
+				                <div class="form-group">
+				                  <label class="col-sm-2" for="inputTo">To</label>
+				                  <div class="col-sm-10"><p th:text="${message.getMailFrom()}"></p><input type="hidden" name="to" th:value="${message.getMailFrom()}"></div>
+				                </div>
+				                <div class="form-group">
+				                  <label class="col-sm-2" for="inputSubject">Subject</label>
+				                  <div class="col-sm-10">
+				                  		<p th:text="${message.getReplySubject()}"></p>
+				                  		<input name="subject" type="hidden" th:value="${message.getReplySubject()}">
+				                  </div>
+				                </div>
+				                <div class="form-group">
+				                  <label class="col-sm-12" for="inputBody">Message</label>
+				                  <div class="col-sm-12">
+				                  	<textarea class="form-control" name="content" rows="18">
+----------- Start Quote -----------
+[(${message.getMailContent()})]
+----------- End Quote -----------
+									</textarea>
+				                  </div>
+				                </div>
+				                <div class="form-group">
+				                	<div class="col-xs-12" style="text-align:center">
+					                	<button type="submit" id="roundSendMail" class="btn btn-success">
+					                		<span class="glyphicon glyphicon-send" style="margin-right: 2px;margin-top: 2px;"></span>
+					                	</button>
+				                	</div>
+				                </div>
+				             </form>
+						    </div>
+						    <div class="modal-footer">
+						      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						    </div>
+						  </div>
+						
+						</div>
+					</div>
+				</span>
+			</tbody>
+		</table>
+		
+	</div>
+	<div id="sendMailModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+		
+		    <!-- Modal content-->
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      <h4 class="modal-title">Envia un nuevo correo</h4>
+		    </div>
+		    <div class="modal-body">
+		     <form role="form" class="form-horizontal" th:action="@{/sendMail}" method="POST">
+                <div class="form-group">
+                  <label class="col-sm-2" for="inputTo">To</label>
+                  <div class="col-sm-10"><select name="to" required="required"><option th:each="email:${emails}" th:value="${email}" th:text="${email}"></option></select></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2" for="inputSubject">Subject</label>
+                  <div class="col-sm-10"><input type="text" class="form-control" name="subject" placeholder="subject" maxlength="42"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-12" for="inputBody">Message</label>
+                  <div class="col-sm-12"><textarea class="form-control" name="content" rows="18"></textarea></div>
+                </div>
+                <div class="form-group">
+                	<div class="col-xs-12" style="text-align:center">
+	                	<button type="submit" id="roundSendMail" class="btn btn-success">
+	                		<span class="glyphicon glyphicon-send" style="margin-right: 2px;margin-top: 2px;"></span>
+	                	</button>
+                	</div>
+                </div>
+             </form>
+		    </div>
+		    <div class="modal-footer">
+		      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    </div>
+		  </div>
+		
+		</div>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+	
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	
+	<!-- Datatables (Order table columns for emails) -->
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+	<script>
+		$(document).ready(function() {
+		    $("#emails").DataTable({
+		    	"scrollX": true,
+		    	"scrollY": true
+		    });
+		} );
+	</script>
+</body>
+</html>

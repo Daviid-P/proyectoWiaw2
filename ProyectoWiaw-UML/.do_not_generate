@@ -1,0 +1,12 @@
+/ProyectoWiaw-UML/.gitignore
+/ProyectoWiaw-UML/.project
+/ProyectoWiaw-UML/.settings/org.eclipse.m2e.core.prefs
+/ProyectoWiaw-UML/bin/.gitignore
+/ProyectoWiaw-UML/bin/.project
+/ProyectoWiaw-UML/bin/.settings/org.eclipse.m2e.core.prefs
+/ProyectoWiaw-UML/bin/build.properties
+/ProyectoWiaw-UML/bin/model.uml
+/ProyectoWiaw-UML/bin/representations.aird
+/ProyectoWiaw-UML/build.properties
+/ProyectoWiaw-UML/model.uml
+/ProyectoWiaw-UML/representations.aird

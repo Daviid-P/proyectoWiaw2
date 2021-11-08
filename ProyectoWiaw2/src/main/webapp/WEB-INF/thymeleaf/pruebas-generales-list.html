@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<!-- Data Tables -->
+	<link th:href="@{webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	<title>Listado de Tipos de Pruebas</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4>Listado de Tipos de Pruebas.</h4>
+	
+	<table class="table table-bordered display" width="100%" id="tablePruebasGenerales">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Descripción</th>
+				<th>Disponible</th>
+				<div sec:authorize="hasRole('ROLE_DIRECTOR')">
+					<th>Pruebas Realizadas</th>
+					<th>Modificar</th>
+					<th>Cancelar/Retomar</th>
+				</div>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="tipoPrueba : ${tiposPruebas}">
+				<td th:text="${tipoPrueba.id}"></td>
+				<td th:text="${tipoPrueba.nombre}"></td>
+				<td th:text="${tipoPrueba.descripcion}"></td>
+				<td th:if="${tipoPrueba.disponible == true}" th:text="Si" style="color: green;"></td>
+				<td th:if="${tipoPrueba.disponible != true}" th:text="No" style="color: red;" ></td>
+				<div sec:authorize="hasRole('ROLE_DIRECTOR')">
+					<td>
+						<a th:href="@{/pruebasDe/{id}(id=${tipoPrueba.id})}" class="btn btn-primary">
+							Pruebas <i class="fa fa-flask" aria-hidden="true"></i>
+						</a>
+					</td>
+					<td>
+						<a th:href="@{/updatePruebaGeneral/{id}(id=${tipoPrueba.id})}" class="btn btn-warning">
+							Modificar <i class="fa fa-pencil" aria-hidden="true"></i>
+						</a>
+					</td>
+					<td>
+						<a th:href="@{/cancPruebaGeneral/{id}(id=${tipoPrueba.id})}" class="btn btn-danger" th:if="${tipoPrueba.disponible == true}">
+							Cancelar <i class="fa fa-ban" aria-hidden="true"></i>
+						</a>
+						<a th:href="@{/acceptPruebaGeneral/{id}(id=${tipoPrueba.id})}" class="btn btn-success" th:if="${tipoPrueba.disponible == false}">
+							Retomar <i class="fa fa-check" aria-hidden="true"></i>
+						</a>
+					</td>
+				</div>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	
+	
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tablePruebasGenerales").DataTable({
+	    	scrollY: true,
+	    	scrollX: true,
+	    });
+	} );
+</script>
+</body>
+</html>

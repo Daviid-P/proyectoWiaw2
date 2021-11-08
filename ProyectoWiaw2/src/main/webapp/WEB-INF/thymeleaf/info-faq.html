@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+
+
+.border-box{
+	outline: 1px solid black;
+}
+.faqHeader {
+    font-size: 27px;
+    margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+    font-family: 'Glyphicons Halflings';
+    float: right;
+    color: #F58723;
+    font-size: 18px;
+    line-height: 22px;
+    /* rotate "play" icon from > (right arrow) to down arrow */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+    /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: #454444;
+}
+
+.panel{
+	top: 0px !important;
+}
+
+
+</style>
+	<title>FAQ</title>
+</head>
+<body>
+<div th:replace="templates/header :: header"></div>
+
+<div class="container">
+
+	<div sec:authorize="hasRole('ROLE_DIRECTOR')">
+        <div class="faqHeader">Director</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Puedo modificar el contrato de un empleado?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    Sí,des de la lista de doctores o recepcionistas, encontrarás un botón, al pulsarlo se te abrirá un formulario con
+                    los datos actuales del contrato, podrás modificar estos y guardar.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Cómo puedo añadir un nuevo empleado, que ya ha sido empleado anteriormente?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Fácil, este empleado seguirá apareciendo en la lista de empleados, pero como 'Inactivo', solo hace falta hacer click en el botón de la derecha de la tabla 'Recontratar', volver
+                    a rellenar los datos de su nuevo contrato y ya está!
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div sec:authorize="hasRole('ROLE_DOCTOR')">
+        <div class="faqHeader">Doctor</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">He añadido un resultado erroneo, puedo modificarlo?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Por supuesto, solo hace falta que accedas a la prueba, debajo verá una lista de resultados, los cuales podrás modificar sin problema.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Antes había un tipo de prueba que me permitía seleccionar, pero ya no lo veo, que puede haber pasado?</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Los directivos son los encargados de cancelar/retomar tipos de pruebas, consulta con un superior si esa prueba ha dejado de hacerse en el hospita.
+                    Puede que haya quedado obsoleta, o que la clínica ya no disponga del equipamiento necesario.
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div sec:authorize="hasRole('ROLE_RECEPCIONISTA')">
+        <div class="faqHeader">Recepcionista</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Cómo puedo dar de alta a un paciente que ya había sido paciente antes?</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Simple, este paciente aún aparecerá en la lista de pacientes, solo hace falta darle de alta de nuevo en la clínica haciendo click en el botón que aparecerá a la derecha de la tabla 'Dar de Alta'.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div sec:authorize="hasRole('ROLE_PACIENTE')">
+        <div class="faqHeader">Paciente</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Porque no puedo cambiar mi nombre y apellidos?</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Si necesitas cambiar tu nombre o tus apellidos deberás pedir que un/a recepcionista lo haga por ti, así podremos actualizar los documentos correspondientes.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+	
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}	
+</script>
+
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	
+</body>
+</html>

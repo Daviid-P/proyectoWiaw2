@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<title>Dashboard</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header"></div>
+	
+	<h4> Bienvenido <span th:text="${name}" />. Que operación desea realizar?</h4>	
+
+	<div sec:authorize="hasRole('ROLE_DIRECTOR')" class="content-section-a">
+		<h5>Operaciones Director:</h5>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<!-- /.feature 1 -->
+						<a th:href="@{/listPacientes}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-users"></i>
+								<div class="inner text-center">
+									<h4>Consultar Pacientes</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/listDoctors}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-user-md"></i>
+								<div class="inner text-center">
+									<h4>Consultar Doctores</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<a th:href="@{/listRecepcionistas}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-phone"></i>
+								<div class="inner text-center">
+									<h4>Consultar Recepcionistas</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/listGeneralPruebas}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-medkit"></i>
+								<div class="inner text-center">
+									<h4>Consultar Pruebas Generales</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<a th:href="@{/addDoctor}">
+								<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-stethoscope"></i>
+								<div class="inner text-center">
+									<h4>Añadir Doctor</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/addRecepcionista}">
+								<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-user-plus"></i>
+								<div class="inner text-center">
+									<h4>Añadir Recepcionista</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<a th:href="@{/addGeneralPrueba}">
+							<div class="col-sm-12 feat-list text-center">
+								<i class="fa fa-flask"></i>
+								<div class="inner text-center">
+									<h4>Añadir Prueba General</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div sec:authorize="hasRole('ROLE_DOCTOR')" class="content-section-a">
+		<h5>Operaciones Doctor:</h5>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<!-- /.feature 1 -->
+						<a th:href="@{/listPacientes}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-user-circle"></i>
+								<div class="inner text-center">
+									<h4>Consultar Pacientes</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/listMyVisitas}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-vcard"></i>
+								<div class="inner text-center">
+									<h4>Consultar/Finalizar Visitas</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<a th:href="@{/listPruebas}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-flask"></i>
+								<div class="inner text-center">
+									<h4>Consultar Pruebas</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/viewContrato}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-file-text-o"></i>
+								<div class="inner text-center">
+									<h4>Consultar Contrato</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<a th:href="@{/addPrueba}">
+								<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-plus"></i>
+								<div class="inner text-center">
+									<h4>Añadir Prueba</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/listPruebas}">
+								<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-warning"></i>
+								<div class="inner text-center">
+									<h4>Añadir Resultado</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<a th:href="@{/listGeneralPruebas}">
+							<div class="col-sm-12 feat-list text-center">
+								<i class="fa fa-globe"></i>
+								<div class="inner text-center">
+									<h4>Consultar Tipos de Pruebas</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div sec:authorize="hasRole('ROLE_RECEPCIONISTA')" class="content-section-a">
+		<h5>Operaciones Recepcionista:</h5>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<!-- /.feature 1 -->
+					<a th:href="@{/listPacientes}">
+						<div class="col-sm-6 feat-list text-center">
+							<i class="fa fa-user-circle wow"></i>
+							<div class="inner text-center">
+								<h4>Consultar Pacientes</h4>
+							</div>
+						</div>
+					</a>
+					<a th:href="@{/listVisitas}">
+						<div class="col-sm-6 feat-list text-center">
+							<i class="fa fa-vcard wow"></i>
+							<div class="inner text-center">
+								<h4>Consultar/Cancelar Visitas</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<a th:href="@{/viewContrato}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-file-text-o"></i>
+								<div class="inner text-center">
+									<h4>Consultar Contrato</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/listDoctors}">
+							<div class="col-sm-6 feat-list text-center">
+								<i class="fa fa-user-md"></i>
+								<div class="inner text-center">
+									<h4>Consultar Doctores</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<a th:href="@{/addPaciente}">
+						<div class="col-sm-12 feat-list text-center">
+							<i class="fa fa-user-plus wow"></i>
+							<div class="inner text-center">
+								<h4>Añadir Nuevo Paciente</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a th:href="@{/addVisita}">
+						<div class="col-sm-12 feat-list text-center">
+							<i class="fa fa-calendar-plus-o wow"></i>
+							<div class="inner text-center">
+								<h4>Añadir Visita</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a th:href="@{/addEmpPaciente}"> <!-- /addEmpPaciente -->
+						<div class="col-sm-12 feat-list text-center">
+							<i class="fa fa-user wow"></i>
+							<div class="inner text-center">
+								<h4>Añadir Empleado Paciente</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div sec:authorize="hasRole('ROLE_PACIENTE')" class="content-section-a">
+		<h5>Operaciones Paciente:</h5>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="row">
+						<!-- /.feature 1 -->
+						<a th:href="@{/doctor}">
+							<div class="col-md-6 feat-list text-center">
+								<i class="fa fa-user-md fa-3 wow"></i>
+								<div class="inner text-center">
+									<h4>Consultar Doctor de Cabecera</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/listPacienteVisitas}">
+							<div class="col-md-6 feat-list text-center">
+								<i class="fa fa-list-alt fa-3 wow"></i>
+								<div class="inner text-center">
+									<h4>Consultar Visitas</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="row">
+						<a th:href="@{/listMyPruebas}">
+							<div class="col-md-6 feat-list text-center">
+								<i class="fa fa-flask"></i>
+								<div class="inner text-center">
+									<h4>Consultar Pruebas</h4>
+								</div>
+							</div>
+						</a>
+						<a th:href="@{/expediente}">
+							<div class="col-md-6 feat-list text-center">
+								<i class="fa fa-vcard fa-3 wow"></i>
+								<div class="inner text-center">
+									<h4>Consultar Expediente</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+</body>
+</html>

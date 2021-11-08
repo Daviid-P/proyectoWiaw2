@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+	input.hidden {
+    	position: absolute;
+    	left: -9999px;
+	}
+
+	#profile-image1 {
+		cursor: pointer;
+		width: 100px;
+		height: 100px;
+		border:2px solid #03b1ce ;}
+	.tital{ font-size:16px; font-weight:500;}
+	.bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}	
+	
+	.edit:hover {
+    	color: #00FF00;
+    	cursor: pointer;
+	}
+	
+	.glyphicon-remove{
+	right: 20px;
+	display: none;
+}
+
+.has-error .glyphicon-remove{
+	display: block !important;	
+}
+
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
+	</style>
+	
+	<title>Perfil</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header"></div>
+	
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 ">
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">  
+					<h4 >Perfil de usuario</h4>
+				</div>
+				<div class="panel-body">
+			       
+			    	<div class="box box-info">
+			        
+						<div class="box-body">
+							<div class="col-sm-6">
+								<div  align="center">
+										<div th:if="${errores}">
+											<ul>
+												<li th:each="error : ${errores}" th:text="${error}"></li>
+											</ul>
+										</div>
+										<img alt="Imágen de perfil." th:src="@{/images/avatar/} + ${usuario.getDni()}" id="profile-image1" class="img-circle img-responsive"
+											 th:onerror="'this.src=\'' + @{/images/avatar/} + 'no_avatar.png\'; this.removeAttribute(\'onerror\')'">
+									
+										<div>
+											<form method="POST" enctype="multipart/form-data" th:action="@{/avatar}">
+												<input name="avatar" id="profile-image-upload" class="hidden" type="file" onchange="this.form.submit()">
+												<div style="color:#999;" >click here to change profile image</div>
+											</form>
+										</div> 
+			                     
+								</div>
+								<br>
+			            	</div>
+			            	<!-- Nombre título -->
+			            	<div class="col-sm-6">
+			            		<p style="color:#00b1b1;" th:text="${usuario.nombre} + ' ' + ${usuario.apellidos}"></p></span>
+								<span>
+									<p sec:authorize="hasRole('ROLE_DIRECTOR')"      th:text="Director"></p>
+									<p sec:authorize="hasRole('ROLE_DOCTOR')"        th:text="Doctor"></p>
+									<p sec:authorize="hasRole('ROLE_RECEPCIONISTA')" th:text="Recepcionista"></p>
+									<p sec:authorize="hasRole('ROLE_PACIENTE')"      th:text="Paciente"></p>
+								</span>            
+							</div>
+							<div class="clearfix"></div>
+							<hr style="margin:5px 0 5px 0;">
+			    
+			              	<!-- Infromación de usuario -->
+							<div class="col-sm-5 col-xs-6 tital">Nombre:</div>
+							<div class="col-sm-7 col-xs-6" th:text="${usuario.nombre}"></div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+							
+							<div class="col-sm-5 col-xs-6 tital " >Apellidos:</div>
+							<div class="col-sm-7" th:text="${usuario.apellidos}"> </div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+							
+							<div class="col-sm-5 col-xs-6 tital " >DNI:</div>
+							<div class="col-sm-7" th:text="${usuario.dni}"></div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+							
+							<div class="col-sm-5 col-xs-6 tital " >Fecha Nacimiento:</div>
+							<div class="col-sm-7" th:text="${usuario.fecha_nacimiento}"></div>
+							<div class="clearfix"></div>
+							<div class="bot-border"></div>
+							
+							<form id="formRegistro" method="post" th:action="@{/changeProfile}" th:object="${changeProfileBean}">
+								<div class="col-sm-5 col-xs-6 tital " >Teléfono:</div>
+								<div class ="hideOnChangePhone">
+									<div class="col-sm-5 editPhone" th:text="${usuario.telefono}"></div>
+									<div class="col-sm-2 edit editPhone"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+								</div>
+								<div class ="showOnChangePhone hide">
+									<div class="col-sm-5">
+										<input type="text" class="form-control input-xs" id="telefono" name="telefono" th:placeholder="${usuario.telefono}"/>
+										<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+									</div>
+									<div class="col-sm-2 edit noEditPhone"><i class="fa fa-times" aria-hidden="true"></i></div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="bot-border"></div>
+								
+								<div class="col-sm-5 col-xs-6 tital " >Email:</div>
+								<div class ="hideOnChangeEmail">
+									<div class="col-sm-5" th:text="${usuario.email}"></div>
+									<div class="col-sm-2 edit editEmail"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+								</div>
+								<div class ="showOnChangeEmail hide">
+									<div class="col-sm-5">
+										<input type="text" class="form-control input-xs" id="email" name="email" th:placeholder="${usuario.email}" th:field="*{email}">
+										<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+									</div>
+									<div class="col-sm-2 edit noEditEmail"><i class="fa fa-times" aria-hidden="true"></i></div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="bot-border"></div>
+								
+								<div class="col-sm-5 col-xs-6 tital " >Código Postal:</div>
+								<div class ="hideOnChangePostal">
+									<div class="col-sm-5" th:text="${usuario.codigoPostal}"></div>
+									<div class="col-sm-2 edit editPostal"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+								</div>
+								<div class ="showOnChangePostal hide">
+									<div class="col-sm-5">
+										<input type="text" class="form-control input-xs" id="codigoPostal" name="codigoPostal" th:placeholder="${usuario.codigoPostal}" th:field="*{codigoPostal}">
+										<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+									</div>
+									<div class="col-sm-2 edit noEditPostal"><i class="fa fa-times" aria-hidden="true"></i></div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="bot-border"></div>
+								
+								<div class="col-sm-5 col-xs-6 tital " >Dirección:</div>
+								<div class ="hideOnChangeDir">
+									<div class="col-sm-5" th:text="${usuario.direccion}"></div>
+									<div class="col-sm-2 edit editDir"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+								</div>
+								<div class ="showOnChangeDir hide">
+									<div class="col-sm-5">
+										<input type="text" class="form-control input-xs" id="direccion" name="direccion" th:placeholder="${usuario.direccion}" th:field="*{direccion}">
+										<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+									</div>
+									<div class="col-sm-2 edit noEditDir"><i class="fa fa-times" aria-hidden="true"></i></div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="bot-border"></div>
+								
+								<div class="col-sm-5 col-xs-6 tital " >Contraseña:</div>
+								<div class ="hideOnChangePass">
+									<div class="col-sm-5"></div>
+									<div class="col-sm-2 edit editPass"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+								</div>
+								<div class ="showOnChangePass hide">
+									<div class="col-sm-5"></div>
+									<div class="col-sm-2 edit noEditPass"><i class="fa fa-times" aria-hidden="true"></i></div>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-6">
+												Contraseña Actual: 
+											</div>
+											<div class="col-sm-6">
+												<input type="password" class="form-control input-xs" id="password" name="password"/> 
+												<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												Nueva Contraseña: 
+											</div>
+											<div class="col-sm-6">
+												<input type="password" class="form-control input-xs" id="newPassword" name="newPassword"/> 
+												<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												Repite Contraseña: 
+											</div>
+											<div class="col-sm-6">
+												<input type="password" class="form-control input-xs" id="newPassword2" name="newPassword2"/> 
+												<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+											</div>
+										</div>
+									</div>
+										
+								</div>
+								<div class="clearfix"></div>
+								<div class="bot-border"></div>
+								
+								
+								<div class ="showOnChange col-sm-12 hide text-right">
+									<input id="submitProfile" type='submit' class="btn btn-primary" value="Actualizar"/>
+								</div>
+								<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+						  			<ul> <!-- Ens diu si algun camp ha tingut algun error -->
+										<li th:each="err : ${#fields.errors('*')}" th:text="${err}">error 1</li> <!-- Troba els errors i els mostra -->
+									</ul>
+								</div>
+								<div th:if="${errPass != null}" class="alert alert-danger">
+						  			<ul> <!-- Ens diu si algun camp ha tingut algun error -->
+										<li th:text="${errPass}"></li>
+									</ul>
+								</div>
+							</form>
+							
+							
+						</div>
+			        </div>
+				</div> 
+			</div>
+		</div>  
+	</div>
+</div>         
+
+	<!-- jQuery -->
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	
+	<script type="text/javascript" th:src="@{webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+<script>
+
+	var count = 0;
+	$(function() {
+		$('#profile-image1').on('click', function() {
+			$('#profile-image-upload').click();
+		});
+	});
+	
+	//Para modifcar la vista del formulario según los campos que se deseen editar
+	$(function() {
+		$("#email").val("");
+		$('.editPhone').click(function(){
+			$('.hideOnChangePhone').addClass("hide");
+			$('.showOnChangePhone').removeClass("hide");
+			$('.showOnChange').removeClass("hide");
+			count ++;
+		});
+		$('.editEmail').click(function(){
+			$('.hideOnChangeEmail').addClass("hide");
+			$('.showOnChangeEmail').removeClass("hide");
+			$('.showOnChange').removeClass("hide");
+			count ++;
+		});
+		$('.editPostal').click(function(){
+			$('.hideOnChangePostal').addClass("hide");
+			$('.showOnChangePostal').removeClass("hide");
+			$('.showOnChange').removeClass("hide");
+			count ++;
+		});
+		$('.editDir').click(function(){
+			$('.hideOnChangeDir').addClass("hide");
+			$('.showOnChangeDir').removeClass("hide");
+			$('.showOnChange').removeClass("hide");
+			count ++;
+		});
+		$('.editPass').click(function(){
+			$('.hideOnChangePass').addClass("hide");
+			$('.showOnChangePass').removeClass("hide");
+			$('.showOnChange').removeClass("hide");
+			count ++;
+		});
+		
+		$('.noEditPhone').click(function(){
+			$('.hideOnChangePhone').removeClass("hide");
+			$('.showOnChangePhone').addClass("hide");
+			$("#telefono").val("");
+			count --;
+		});
+		$('.noEditEmail').click(function(){
+			$('.hideOnChangeEmail').removeClass("hide");
+			$('.showOnChangeEmail').addClass("hide");
+			$("#email").val("");
+			count --;
+		});
+		$('.noEditPostal').click(function(){
+			$('.hideOnChangePostal').removeClass("hide");
+			$('.showOnChangePostal').addClass("hide");
+			$("#codigoPostal").val("");
+			count --;
+		});
+		$('.noEditDir').click(function(){
+			$('.hideOnChangeDir').removeClass("hide");
+			$('.showOnChangeDir').addClass("hide");
+			$("#direccion").val("");
+			count --;
+		});
+		$('.noEditPass').click(function(){
+			$('.hideOnChangePass').removeClass("hide");
+			$('.showOnChangePass').addClass("hide");
+			$("#password").val("");
+			count --;
+		});
+		
+		$('.edit').click(function(){
+			if(count == 0){
+				$('.showOnChange').addClass("hide");	
+			}
+		});
+		
+	});
+	
+	//Validación cliente
+	jQuery.validator.addMethod("onlyNumbers", function(value, element, param) {
+		return jQuery.isNumeric(value);
+	});
+
+	
+	$(function() {
+
+		$("#formRegistro").validate({
+		
+			//Custom error class for parent div of element
+			highlight: function(element) {
+				$(element).parent().addClass("has-error");
+			},
+			unhighlight: function(element) {
+				$(element).parent().removeClass("has-error");
+			},
+			// Reglas de validación
+			rules: {
+				telefono: {
+					minlength: 9,
+					maxlength: 9,
+					onlyNumbers: true
+				},
+				direccion: {
+					required: true
+				},
+				codigoPostal: {
+					required: true,
+					minlength: 5,
+					maxlength: 5,
+					onlyNumbers: true
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				password: {
+					required: true,
+					minlength: 5
+				},
+				newPassword: {
+					required: true,
+					minlength: 5
+				},
+				newPassword2: {
+					equalTo : "#newPassword"
+				}
+			},
+			// Specify validation error messages
+			messages: {
+			  telefono: {
+			  	minlength: "Teléfono no valido",
+			  	maxlength: "Teléfono no valido",
+			  	onlyNumbers: "Teléfono no valido"
+			  },
+			  direccion: {
+			  	required: "Es necesario introducir una dirección"
+			  },
+			  codigoPostal: {
+			  	minlength: "Código postal no valido",
+			  	maxlength: "Código postal no valido",
+			  	onlyNumbers: "Código postal no valido",
+			  	required: "Es necesario introducir un código postal"
+			  },
+			  email: "Email no válido",
+			  inicio: {
+			  	required: "Es necesario introducir fecha de inicio de contrato"
+			  },
+			  password: {
+					required: "Es necesario introducir tu contraseña actual",
+					minlength: "Contraseña demasiado pequeña"
+				},
+				newPassword: {
+					required: "Es necesario introducir tu nueva contraseña",
+					minlength: "Contraseña demasiado pequeña"
+				},
+				newPassword2: {
+					equalTo : "Las contraseñas no coinciden"
+				}
+			},
+			// Make sure the form is submitted to the destination defined
+			// in the "action" attribute of the form when valid
+			submitHandler: function(form) {
+			  form.submit();
+			}
+		});
+	});
+</script>
+</body>
+</html>

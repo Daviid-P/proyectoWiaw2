@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{~/proyectowiaw2/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{~/proyectowiaw2/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{~/proyectowiaw2/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{~/proyectowiaw2/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+#deceased{
+	background-color:#FFF3F5;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.remove_field{
+	float:right;	
+	cursor:pointer;
+	position : absolute;
+}
+.remove_field:hover{
+	text-decoration:none;
+}
+
+body{
+	font-family: 'Montserrat', serif;
+}
+
+.border-box{
+	outline: 1px solid black;
+}
+
+.glyphicon-remove{
+	right: 20px;
+	display: none;
+}
+
+.has-error .glyphicon-remove{
+	display: block !important;	
+}
+
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+</style>
+	<title>Contrato</title>
+</head>
+<body>
+<div class="container">
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<div class="panel panel-primary" style="margin:20px;">
+		<div class="panel-heading">
+				<h3 class="panel-title">Añadir Contrato</h3>
+		</div>
+		<div class="panel-body">
+			<form id="formRegistro" method="post" th:action="@{${url}}" th:object="${contratoBean}">
+				<div class="col-md-12 col-sm-12">
+					<div class="row">
+						<h3>Datos Contrato de <span th:text="${name}"></span></h3>
+						<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+							<ul> <!-- Ens diu si algun camp ha tingut algun error -->
+								<li th:each="err : ${#fields.errors('*')}" th:text="${err}">error 1</li> <!-- Troba els errors i els mostra ${#dates.format(bookingEntry.datefrom, 'dd-MMM-yyyy')}-->
+							</ul>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-3 col-sm-3 inicio has-feedback">
+								<label for="inicio">Inicio contrato*</label>
+								<input type="text" class="form-control input-sm datepicker"  th:if="${contratoBean.inicio}" name="inicio" id="inicio" th:value="${#temporals.format(contratoBean.inicio, 'dd/MM/yyyy')}" placeholder="Fecha Inicio Contrato">
+								<input type="text" class="form-control input-sm datepicker" th:if="${contratoBean.inicio == null}" name="inicio" id="inicio"  th:field="*{inicio}" placeholder="Fecha Inicio Contrato">
+							</div>
+							<div class="form-group col-md-3 col-sm-3 fin has-feedback">
+								<label for="fin">Fin contrato</label>
+								<input type="text" class="form-control input-sm datepicker" th:if="${contratoBean.finContrato}" name="finContrato" id="fin" th:value="${#temporals.format(contratoBean.finContrato, 'dd/MM/yyyy')}" placeholder="Fecha Fin Contrato">
+								<input type="text" class="form-control input-sm datepicker" th:if="${contratoBean.finContrato == null}" name="finContrato" id="fin"  th:field="*{finContrato}" placeholder="Fecha Fin Contrato">
+							</div>
+							<div class="form-group col-md-6 col-sm-6 sueldo has-feedback">
+								<label for="sueldo">Sueldo*</label>
+								<input type="text" class="form-control input-sm" name="sueldo" id="sueldo" th:field="*{sueldo}" placeholder="Sueldo">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6 col-sm-6 tipo has-feedback">
+								<label for="tipo">Tipo contrato*</label>
+								<select name="tipo" class="form-control input-sm" id="tipo">
+									<option value="temporal" th:selected="*{tipo == 'temporal'}">Temporal</option>
+									<option value="indefinido" th:selected="*{tipo == 'indefinido'}">Indefinido</option>
+									<option value="practicas" th:selected="*{tipo == 'practicas'}">Prácticas</option>
+								</select>
+							</div>
+	
+							<div class="form-group col-md-6 col-sm-6 diasvacaciones has-feedback">
+								<label for="dias">Días de vacaciones*</label>
+								<input type="text" class="form-control input-sm" name="diasvacaciones" id="diasvacaciones" th:field="*{dias_vacaciones}" placeholder="Dias de Vacaciones por Año">
+								<input th:if="${contratoBean}" type="hidden" name="id" th:field="*{id}">
+							</div>
+						</div>
+					</div>
+					<div class="row" id="addblock">
+						<div class="form-group col-md-3 col-sm-3">
+							<button id="updateContrato" class="btn btn-primary">Insertar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<script type='text/javascript'>
+	$(function() {
+		//calendar call function
+		$('.datepicker').dcalendar();
+		$('.datepicker').dcalendarpicker();
+
+			var max_fields = 10; //maximum input boxes allowed
+			var x = 1; //initlal text box count
+		
+		$(document).on('click', '.remove_field', function(e){
+				e.preventDefault(); 
+			$(this).parent('div').remove(); 
+			x--;
+		});	
+	});
+
+//VALIDATION
+
+//Si el contrato es indefinido no tendrá fecha de finalización
+$("#tipo").change(function(){
+	tipo = $("#tipo").val();
+	//Dice si es necerio o no que tenga fecha de finalización
+	if(tipo == "temporal" || tipo == "practicas"){
+		$(".fin").removeClass("hide");
+	}
+	else{
+		$(".fin").addClass("hide");
+		$("#fin").val("");
+	}
+ });
+
+//Dice si es necerio o no que tenga fecha de finalización
+jQuery.validator.addMethod("requiredFin", function(value, element, param) {
+	
+});
+//No numbers
+jQuery.validator.addMethod("notNumber", function(value, element, param) {
+	var reg = /[0-9]/;
+	if(reg.test(value)){
+		return false;
+	}else{
+		return true;
+	}
+});
+
+//Is numeric
+jQuery.validator.addMethod("onlyNumbers", function(value, element, param) {
+	return jQuery.isNumeric(value);
+});
+
+//Indefinido no tiene findata
+jQuery.validator.addMethod("indefinidoNoFinDate", function(value, element, param) {
+	if($("#tipo").val() == "indefinido"){
+		return $("#fin").val() == "";
+	}
+	else{
+		return true;
+	}
+});
+
+//Indefinido no tiene findata
+jQuery.validator.addMethod("noIndefinidoFinDate", function(value, element, param) {
+	if($("#tipo").val() != "indefinido"){
+		return $("#fin").val() != "";
+	}
+	else{
+		return true;
+	}
+	
+});
+
+
+$(function() {
+
+	$("form").validate({
+		//Custom error class for parent div of element
+		highlight: function(element) {
+			$(element).parent().addClass("has-error");
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass("has-error");
+		},
+		// Reglas de validación
+		rules: {
+			//CONTRATO
+			inicio: {
+				required: true
+			},
+			sueldo: {
+				required: true,
+				onlyNumbers: true
+			},
+			diasvacaciones: {
+				required: true,
+				onlyNumbers: true
+			},
+			tipo: {
+				indefinidoNoFinDate: true,
+				noIndefinidoFinDate: true
+			}
+		},
+		// Specify validation error messages
+		messages: {
+			inicio: {
+				required: "Es necesario introducir fecha de inicio de contrato"
+			},
+		  sueldo: {
+			required: "Es necesario introducir un sueldo",
+			onlyNumbers: "El sueldo debe ser numérico"
+		  },
+		  diasvacaciones: {
+			required: "Es necesario introducir los días de vacaciones",
+			onlyNumbers: "El validator debe ser numérico"
+		  },
+		  tipo: {
+				indefinidoNoFinDate: "Un contrato indefinido no puede tener fecha de finalización",
+				noIndefinidoFinDate: "Un contrato de este tipo tiene que tener fecha de finalización"
+			}
+		},
+		// Make sure the form is submitted to the destination defined
+		// in the "action" attribute of the form when valid
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	});
+});
+
+	</script>
+</body>
+</html>

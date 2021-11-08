@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{~/proyectowiaw2/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{~/proyectowiaw2/resources/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" type="text/css"/>
+	<link th:href="@{~/proyectowiaw2/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{~/proyectowiaw2/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+
+	<style type="text/css">
+#deceased{
+	background-color:#FFF3F5;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.remove_field{
+	float:right;	
+	cursor:pointer;
+	position : absolute;
+}
+.remove_field:hover{
+	text-decoration:none;
+}
+
+body{
+	font-family: 'Montserrat', serif;
+}
+
+.border-box{
+	outline: 1px solid black;
+}
+
+.glyphicon-remove{
+	right: 20px;
+	display: none;
+}
+
+.has-error .glyphicon-remove{
+	display: block !important;	
+}
+
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+</style>
+	<title>Visita</title>
+</head>
+<body>
+<div class="container">
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<div class="panel panel-primary" style="margin:20px;">
+		<div class="panel-heading">
+				<h3 class="panel-title">Añadir Visita</h3>
+		</div>
+		<div class="panel-body">
+			<form id="formRegistro" method="post" th:action="@{/addVisita}" th:object="${visitaBean}">
+			<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+				<ul> <!-- Ens diu si algun camp ha tingut algun error -->
+					<li th:each="err : ${#fields.errors('*')}" th:text="${err}">error 1</li> <!-- Troba els errors i els mostra -->
+				</ul>
+			</div>
+			<div th:class="${classError}">
+				<p><span  th:text="${errorVisita}" /></p>
+			</div>
+				<div class="col-md-12 col-sm-12">
+					<div class="row">
+						<div class="row">
+							<div class="form-group col-md-6 col-sm-6 doctor has-feedback">
+								<label for="email">Doctor*</label>
+								<select name="doctorDni" class="form-control input-sm" id="doctorDni" th:field="*{doctorDni}">
+									<!-- <option value="auto">Autoasignación</option> -->
+									<option th:each="oneDoctor : ${doctores}" th:value="${oneDoctor.dni}" th:text="${oneDoctor.nombre} + ' ' + ${oneDoctor.apellidos} + ' -- DNI:' + ${oneDoctor.dni} + ' -- Especialidad: ' + ${oneDoctor.especialidad} ">a</option>
+								</select>
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+							</div>
+							<div class="form-group col-md-6 col-sm-6 paciente has-feedback">
+								<label for="email">Paciente*</label>
+								<select name="pacienteDni" class="form-control input-sm" id="pacienteDni" th:field="*{pacienteDni}">
+									<option th:each="onePaciente : ${pacientes}" th:value="${onePaciente.dni}" th:text="${onePaciente.nombre} + ' ' + ${onePaciente.apellidos} + ' DNI:' + ${onePaciente.dni}">a</option>
+								</select>
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6 col-sm-6 fecha has-feedback">
+								<label for="DOB">Fecha*</label>
+				               	<div class='input-group date' id='datetimepicker2'>
+									<input type="text" class="form-control input-sm" name="fecha" id="fecha" th:field="*{fecha}">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+	
+							<div class="form-group col-md-6 col-sm-6 habitacion has-feedback">
+								<label for="email">Número habitación*</label>
+								<input type="text" class="form-control input-sm" name="habitacion" id="habitacion" placeholder="1" th:field="*{habitacion}">
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row" id="addblock">
+						<div class="form-group col-md-3 col-sm-3">
+							<button id="addVisita" class="btn btn-primary">Añadir</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/resources/js/moment.min.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/resources/js/bootstrap-datetimepicker.es.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/resources/js/bootstrap-datetimepicker.min.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/resources/js/jquery-transition.min.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{~/proyectowiaw2/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+<script type='text/javascript'>
+$(function () {
+    $('#datetimepicker2').datetimepicker({
+        locale: 'es',
+        stepping: 30,
+        enabledHours: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+        format: "DD/MM/YYYY HH:mm"
+    });
+});
+//VALIDATION
+
+//No numbers
+jQuery.validator.addMethod("notNumber", function(value, element, param) {
+	var reg = /[0-9]/;
+	if(reg.test(value)){
+		return false;
+	}else{
+		return true;
+	}
+});
+
+//Is numeric
+jQuery.validator.addMethod("onlyNumbers", function(value, element, param) {
+	return jQuery.isNumeric(value);
+});
+
+$(function() {
+
+	$("form").validate({
+		//Custom error class for parent div of element
+		highlight: function(element) {
+			$(element).parent().addClass("has-error");
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass("has-error");
+		},
+		// Reglas de validación
+		rules: {
+			//CONTRATO
+			fecha: {
+				required: true
+			},
+			habitacion: {
+				required: true,
+				onlyNumbers: true,
+				range: [1, 357]
+			}
+		},
+		// Specify validation error messages
+		messages: {
+			fecha: {
+				required: "Es necesario introducir fecha de visita"
+			},
+			habitacion: {
+				required: "Es necesario introducir una habitacion",
+				onlyNumbers: "Este campo solo puede contener números",
+				range: "Solo tenemos habitaciones de la 1 a la 357"
+			}
+		},
+		// Make sure the form is submitted to the destination defined
+		// in the "action" attribute of the form when valid
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	});
+});
+
+	</script>
+</body>
+</html>

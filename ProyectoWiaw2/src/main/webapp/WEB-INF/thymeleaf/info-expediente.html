@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+
+
+.border-box{
+	outline: 1px solid black;
+}
+
+
+</style>
+	<title>Mostrar Expediente</title>
+</head>
+<body>
+<div th:replace="templates/header :: header"></div>
+
+<div class="panel panel-primary" style="margin:20px;">
+	<div class="panel-heading">
+			<h3 class="panel-title">Datos Expediente</h3>
+	</div>
+<div class="panel-body">	
+	<div class="col-sm-12">
+		<h4>Datos Paciente:</h4>
+		<div class="row" style="background-color:#ededed;">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-sm-2">
+						<h6>Nombre:</h6>
+						<p th:text="${paciente.nombre} + ' ' + ${paciente.apellidos}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>DNI:</h6>
+						<p th:text="${paciente.dni}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Fecha nacimiento:</h6>
+						<p th:text="${paciente.fecha_nacimiento}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Teléfono:</h6>
+						<p th:text="${paciente.telefono}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Email:</h6>
+						<p th:text="${paciente.email}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>CP/Dirección:</h6>
+						<p th:text="${paciente.codigoPostal} + ' ' + ${paciente.direccion}"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2">
+						<h6>Género</h6>
+						<p th:if="${expediente.genero} == 'H'">Hombre</p>
+						<p th:if="${expediente.genero} == 'M'">Mujer</p>
+						<p th:if="${expediente.genero} == 'O'">Otro</p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Ocupación:</h6>
+						<p th:text="${expediente.ocupacion}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Hospitalizaciones:</h6>
+						<p th:text="${expediente.hospitalizaciones}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Peso:</h6>
+						<p th:text="${expediente.peso} + 'Kg'"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h4>Datos de interés:</h4>
+		<div class="row" style="background-color:#ededed;">
+			<div class="col-sm-4">
+				<h6>Alergias:</h6>
+				<p th:text="${expediente.alergias}"></p>
+			</div>
+			<div class="col-sm-4">
+				<h6>Alimentación:</h6>
+				<p th:text="${expediente.alimentacion}"></p>
+			</div>
+			<div class="col-sm-4">
+				<h6>Habitos:</h6>
+				<p th:text="${expediente.habitos}"></p>
+			</div>
+		</div>
+		<h4>Datos Médicos:</h4>
+		<div class="row" style="background-color:#ededed;">
+			<div class="col-sm-6">
+				<h6>Antecedentes Médicos:</h6>
+				<p th:text="${expediente.antecedentesMedicos}"></p>
+			</div>
+			<div class="col-sm-6">
+				<h6>Medicación:</h6>
+				<p th:text="${expediente.medicacion}"></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a sec:authorize="hasAnyRole('ROLE_DOCTOR','ROLE_DIRECTOR','ROLE_RECEPCIONISTA')" th:href="@{/descargar/expediente/} + ${paciente.dni}" class="btn btn-danger">Descargar en PDF</a>
+			<a sec:authorize="hasRole('ROLE_PACIENTE')" th:href="@{/descargar/expediente/}" class="btn btn-danger">Descargar en PDF</a>
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}	
+</script>
+
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+</body>
+</html>

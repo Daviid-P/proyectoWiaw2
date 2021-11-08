@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<!-- Data Tables -->
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	
+	<title>Listado de Visitas.</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4> Listado de Visitas.</h4>
+	<span th:text="${visitaa}"></span>
+	<table class="table table-bordered display" width="100%" id="tableVisitas">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Fecha</th>
+				<th>Habitación</th>
+				<th>Doctor</th>
+				<th sec:authorize="!hasRole('ROLE_PACIENTE')">Paciente</th>
+				<th>Estado</th>
+				<th>Información</th>
+				<th sec:authorize="hasAnyRole('ROLE_RECEPCIONISTA','ROLE_DOCTOR')">Cancelar/Finalizar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="visita : ${visitas}">
+				<td th:text="${visita.id}"></td>
+				<td th:text="${#temporals.format(visita.fecha, 'dd/MM/yyyy HH:mm')}"></td>
+				<td th:text="${visita.habitacion}"></td>
+				<td th:text="${visita.doctor.nombre} + ' ' + ${visita.doctor.apellidos} + ' -- DNI: ' + ${visita.doctor.dni}"></td>	
+				<td sec:authorize="!hasRole('ROLE_PACIENTE')" th:text="${visita.paciente.nombre} + ' ' + ${visita.paciente.apellidos}"></td>
+				<td th:if="${visita.estado == 'Pendiente'}" th:text="${visita.estado}" style="color: green;"></td>
+				<td th:if="${visita.estado == 'Cancelada'}" th:text="${visita.estado}" style="color: red;"></td>
+				<td th:if="${visita.estado == 'Finalizada'}" th:text="${visita.estado}" style="color: orange;"></td>
+				<td>
+					<a th:href="@{/visita/{id}(id=${visita.id})}" class="btn btn-primary">
+						<span class='glyphicon glyphicon-list-alt'></span> Información
+					</a>				
+				</td>
+				<td sec:authorize="hasAnyRole('ROLE_RECEPCIONISTA','ROLE_DOCTOR')" th:if="${visita.estado == 'Pendiente'}">
+					<a th:href="@{/delVisita/{id}(id=${visita.id})}" class="btn btn-danger" sec:authorize="hasRole('ROLE_RECEPCIONISTA')">
+						<span class='glyphicon glyphicon-remove'></span> Cancelar
+					</a>
+					<a th:href="@{/finVisita/{id}(id=${visita.id})}" class="btn btn-warning" sec:authorize="hasRole('ROLE_DOCTOR')">
+						<span class='glyphicon glyphicon-ok'></span> Finalizar
+					</a>
+				</td>
+				<td sec:authorize="hasAnyRole('ROLE_RECEPCIONISTA','ROLE_DOCTOR')" th:if="${visita.estado != 'Pendiente'}">-</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+	
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tableVisitas").DataTable();
+	} );
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<!-- Data Tables -->
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	<title>Info doctor</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h3>Información Doctor</h3>
+
+	<table class="table table-bordered" th:object="${doctor}">
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>DNI</th>
+			<th>Email</th>
+			<th>Teléfono</th>
+			<th>Especialidad</th>
+		</tr>
+		
+		<tr>
+			<th th:text="*{id}"></th>
+			<td th:text="*{nombre}"></td>
+			<td th:text="*{apellidos}"></td>
+			<td th:text="*{dni}"></td>	
+			<td th:text="*{email}"></td>
+			<td th:text="*{telefono}"></td>			
+			<td th:text="*{especialidad}"></td>
+		</tr>
+	</table>
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	
+	<!-- Listado de visitas pendientes que tiene programadas el doctor  -->
+	<div sec:authorize="hasAnyRole('ROLE_DOCTOR', 'ROLE_RECEPCIONISTA')">
+		<!-- Esto solo es visible para metodos de empleados -->
+		<h4>Listado de visitas pendientes:</h4>
+		<table class="table table-bordered display" width="100%" id="tableVisitas" th:object="${doctor}">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Fecha</th>
+					<th>Habitación</th>
+					<th>Paciente</th>
+					<th>Información</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="visita : *{visitas}" th:if="${visita.estado == 'Pendiente'}">
+					<td th:text="${visita.id}"></td>
+					<td th:text="${visita.fecha}"></td>
+					<td th:text="${visita.habitacion}"></td>
+					<td th:text="${visita.paciente.nombre} + ' ' + ${visita.paciente.apellidos}"></td>
+					<td>
+						<a th:href="@{/visita/{id}(id=${visita.id})}" class="btn btn-primary">
+							<span class='glyphicon glyphicon-list-alt'></span> Información
+						</a>				
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- Listado de pacientes que tiene asignado el doctor, solo si es de cabecera -->
+	<div th:if="${doctor.especialidad == 'cabecera'}" sec:authorize="hasAnyRole('ROLE_DOCTOR', 'ROLE_RECEPCIONISTA')">
+		<!-- Esto solo es visible para metodos de empleados -->
+		<h4>Listado de pacientes asignados:</h4>
+		<table class="table table-bordered display" width="100%" id="tablePacientes" th:object="${doctor}">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Apellidos</th>
+					<th>DNI</th>
+					<th>Email</th>
+					<th>Teléfono</th>
+					<th>Codigo Postal</th>
+					<th>Dirección</th>
+					<th>Habitación</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="paciente : *{pacientes}">
+					<th th:text="${paciente.id}"></th>
+					<td th:text="${paciente.nombre}"></td>
+					<td th:text="${paciente.apellidos}"></td>
+					<td th:text="${paciente.dni}"></td>	
+					<td th:text="${paciente.email}"></td>
+					<td th:text="${paciente.telefono}"></td>
+					<td th:text="${paciente.codigoPostal}"></td>
+					<td th:text="${paciente.direccion}"></td>
+					<td th:switch="${paciente.habitacion}">
+						<span th:case="null">No residente</span>
+						<span th:case="*" th:text="${paciente.habitacion}"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+	<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tablePacientes").DataTable({
+	    	"scrollX": true,
+	    	"scrollY": true
+	    });
+	    $("#tableVisitas").DataTable({
+	    	"scrollX": true,
+	    	"scrollY": true
+	    });
+	} );
+	
+	</script>
+</body>
+</html>

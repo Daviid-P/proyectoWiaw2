@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Intranet Clínica Médica</title>
+
+<meta name="description" content="Intranet Clínica Médica">    
+
+  <meta name="author" content="Kevin Ramos López<br>David Pareja Rodríguez" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Intranet Clínica Médica</h1>
+<h3>Kevin Ramos López<br>David Pareja Rodríguez</h3>
+<p>
+<h4>DAW-Curs 2 2016/2017</h4>
+</p>
+</section>  
+
+
+<section id="introducción" class="level1">
+<h1>Introducción</h1>
+<section id="descripción" class="level2">
+<h2>Descripción</h2>
+<p>Todos somos conscientes del duro trabajo que realizan los doctores y demás empleados en las clínicas.<br> Pero pocos pensamos en la gran cantidad de información con la que tienen que trabajar.<br> <strong>¿Por que no facilitarles ese trabajo?</strong></p>
+</section>
+<section id="cómo" class="level2">
+<h2>¿Cómo?</h2>
+<p>Con una aplicación web que permita almacenar información de manera segura y acceder a ella de manera cómoda y rápida.</p>
+</section>
+</section>
+<section id="información" class="level1">
+<h1>Información</h1>
+<section id="servicios-utilizados" class="level2">
+<h2>Servicios utilizados</h2>
+<blockquote>
+<ul>
+<li>JAVA Spring MVC</li>
+<li>Framework: Hibernate</li>
+<li>HTML5/CSS3 + Bootstrap</li>
+<li>Jquery/JavaScript</li>
+<li>PostgreSQL</li>
+</ul>
+</blockquote>
+</section>
+<section id="diagrama-de-arquitectura" class="level2">
+<h2>Diagrama de Arquitectura</h2>
+<figure>
+<img src="../Documentacion/Diagrama-Arquitectura.png" />
+</figure>
+</section>
+<section id="diagrama-de-bbdd" class="level2">
+<h2>Diagrama de BBDD</h2>
+<p><a href="../Documentacion/DiagramaBBDD.png">Ver</a></p>
+</section>
+<section id="casos-de-uso" class="level2">
+<h2>Casos de Uso</h2>
+<p>Vamos a ver una breve comparación entre los casos de uso planeados inicialmente y el resultado final.</p>
+</section>
+<section id="usuario" class="level2">
+<h2>Usuario</h2>
+<figure>
+<img src="img/Usuario-Final.png" alt="Final" /><figcaption>Final</figcaption>
+</figure>
+</section>
+<section id="director" class="level2">
+<h2>Director</h2>
+<figure>
+<img src="img/Director-Inicial.png" alt="Inicial" /><figcaption>Inicial</figcaption>
+</figure>
+</section>
+<section id="director-1" class="level2">
+<h2>Director</h2>
+<p><img src="img/Director-Final.png" width="65%"></p>
+</section>
+<section id="paciente" class="level2">
+<h2>Paciente</h2>
+<figure>
+<img src="img/Paciente-Inicial.png" alt="Incial" /><figcaption>Incial</figcaption>
+</figure>
+</section>
+<section id="paciente-1" class="level2">
+<h2>Paciente</h2>
+<figure>
+<img src="img/Paciente-Final.png" alt="Final" /><figcaption>Final</figcaption>
+</figure>
+</section>
+<section id="empleado" class="level2">
+<h2>Empleado</h2>
+<figure>
+<img src="img/Empleado-Inicial.png" alt="Incial" /><figcaption>Incial</figcaption>
+</figure>
+</section>
+<section id="empleado-1" class="level2">
+<h2>Empleado</h2>
+<figure>
+<img src="img/Empleado-Final.png" alt="Final" /><figcaption>Final</figcaption>
+</figure>
+</section>
+<section id="doctor" class="level2">
+<h2>Doctor</h2>
+<figure>
+<img src="img/Doctor-Inicial.png" alt="Incial" /><figcaption>Incial</figcaption>
+</figure>
+</section>
+<section id="doctor-1" class="level2">
+<h2>Doctor</h2>
+<figure>
+<img src="img/Doctor-Final.png" alt="Final" /><figcaption>Final</figcaption>
+</figure>
+</section>
+<section id="recepcionista" class="level2">
+<h2>Recepcionista</h2>
+<figure>
+<img src="img/Recepcionista-Inicial.png" alt="Incial" /><figcaption>Incial</figcaption>
+</figure>
+</section>
+<section id="recepcionista-1" class="level2">
+<h2>Recepcionista</h2>
+<figure>
+<img src="img/Recepcionista-Final.png" alt="Final" /><figcaption>Final</figcaption>
+</figure>
+</section>
+<section id="diagrama-de-clases" class="level2">
+<h2>Diagrama de Clases</h2>
+<p><a href="../Documentacion/DiagramaClasesClinica.png">Ver</a></p>
+</section>
+<section id="manual-de-usuario" class="level2">
+<h2>Manual de Usuario</h2>
+<p><a href="../Documentacion/Manual_de_Usuario.pdf">Manual PDF</a></p>
+</section>
+</section>
+<section id="código" class="level1">
+<h1>Código</h1>
+<section id="introducción-1" class="level2">
+<h2>Introducción</h2>
+<p>Explicación y ejemplos sobre la arquitectura y plugins utilizados.</p>
+</section>
+<section id="arquitectura-back-end" class="level2">
+<h2>Arquitectura Back End</h2>
+<blockquote>
+<ul>
+<li>Repositories</li>
+<li>Controllers</li>
+<li>Entities</li>
+<li>Beans</li>
+<li>AccessCheck</li>
+<li>Validation Class</li>
+</ul>
+</blockquote>
+</section>
+<section id="repositories" class="level2">
+<h2>Repositories</h2>
+<pre><code>package org.escoladeltreball.proyectowiaw2.repositories;
+
+import java.util.List;
+
+@Service
+@Repository
+@Transactional
+public class DoctorDAO {
+
+    
+    @PersistenceContext
+    protected EntityManager manager;
+    
+    //Obtiene un doctor a partir de un dni
+    public Doctor getDoctor(String dni) {
+        
+        Query query = manager.createNamedQuery(&quot;findDoctorByDni&quot;).setParameter(&quot;dni&quot;, dni);
+        Doctor doctor = (Doctor)query.getSingleResult();
+        
+        return doctor;
+    }
+    
+    //Obtiene una lista con todas las pruebas
+    public List&lt;Prueba&gt; getAllPruebas() {
+        
+        Query query = manager.createNamedQuery(&quot;findAllPruebas&quot;);
+        List&lt;Prueba&gt; pruebas = query.getResultList();
+        
+        return pruebas;
+    }
+    
+    //Obtiene una lista con las pruebas de un paciente
+    public List&lt;Prueba&gt; getAllPruebasOfPacient(Paciente paciente) {
+        
+        Query query = manager.createNamedQuery(&quot;findPruebaByPaciente&quot;).setParameter(&quot;paciente&quot;, paciente);
+        List&lt;Prueba&gt; pruebas = query.getResultList();
+        
+        return pruebas;
+    }
+    
+    //Obtiene una lista con las pruebas de un tipo de prueba
+    public List&lt;Prueba&gt; getAllPruebasOfTipoPrueba(TipoPrueba tipo) {
+        
+        Query query = manager.createNamedQuery(&quot;findPruebaByTipo&quot;).setParameter(&quot;tipo&quot;, tipo);
+        List&lt;Prueba&gt; pruebas = query.getResultList();
+        
+        return pruebas;
+    }
+    
+    //Obtiene una prueba por Id
+    public Resultado getResultadoById(long id) {
+        
+        Query query = manager.createNamedQuery(&quot;findResultadoById&quot;).setParameter(&quot;id&quot;, id);
+        Resultado resultado = (Resultado)query.getSingleResult();
+        
+        return resultado;
+    }
+    
+    //Obtiene un resultado por Id
+    public Prueba getPruebaById(long id) {
+        
+        Query query = manager.createNamedQuery(&quot;findPruebaById&quot;).setParameter(&quot;id&quot;, id);
+        Prueba prueba = (Prueba)query.getSingleResult();
+        
+        return prueba;
+    }
+    
+    //Obtiene un Tipo de prueba por id
+    public TipoPrueba getTipoPruebaById(long id) {
+        
+        Query query = manager.createNamedQuery(&quot;findTipoPruebaById&quot;).setParameter(&quot;id&quot;, id);
+        TipoPrueba tipoPrueba = (TipoPrueba)query.getSingleResult();
+        
+        return tipoPrueba;
+    }
+    
+    //Merge de una visita
+    public void mergeVisita(Visita visita) {
+        
+        manager.merge(visita);
+        manager.flush();
+    }
+    
+    //Merge de una prueba
+    public void mergePrueba(Prueba prueba) {
+        
+        manager.merge(prueba);
+        manager.flush();
+    }
+    
+    //Merge de un resultado
+    public void mergeResultado(Resultado resultado) {
+        
+        manager.merge(resultado);
+        manager.flush();
+    }   
+}</code></pre>
+</section>
+<section id="controllers" class="level2">
+<h2>Controllers</h2>
+<pre><code>package org.escoladeltreball.proyectowiaw2.controllers;
+
+@Controller
+public class DoctorController {
+    
+    @Autowired
+    UsuarioDAO usuarioDao;
+    
+    @Autowired
+    RecepcionistaDAO recepcionistaDao;
+    
+    @Autowired
+    PacienteDAO pacienteDao;
+    
+    @Autowired
+    DoctorDAO doctorDao;
+    
+    @Autowired
+    DirectorDAO directorDao;
+    
+    @Autowired
+    EmpleadoDAO empleadoDao;
+    
+    @Autowired
+    AccessCheck accessCheck;
+    
+    //VISITAS################################################################################################################################################
+    
+    //Lista las visitas de el doctor que realiza la consulta
+    @RequestMapping(value=&quot;/listMyVisitas&quot;, method = RequestMethod.GET)
+    public String listMyVisitas(Locale locale, Model model, Principal principal) {
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoDoctor(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para doctores.&quot;);
+            mensajes.add(&quot;Solo un doctor puede consultar sus propias visitas.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }
+        
+        Doctor doctor = doctorDao.getDoctor(principal.getName());
+        
+        //Pasamos las visitas que tiene programadas este doctor
+        model.addAttribute(&quot;visitas&quot;,doctor.getVisitas());
+        
+        return &quot;visita-list&quot;;
+    }
+    
+    //Una vez realizada una visita permite finalizar esta e introducir las observaciones
+    @RequestMapping(&quot;/finVisita/{id}&quot;)
+    public String delVisita(Locale locale, Model model, Principal principal,
+            @PathVariable(&quot;id&quot;) long id){
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoDoctor(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para doctores.&quot;);
+            mensajes.add(&quot;Solo un doctor puede finalizar una visita.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }       
+        Visita visita = recepcionistaDao.findOneVisita(id);
+        
+        model.addAttribute(&quot;paciente&quot;, visita.getPaciente());
+        model.addAttribute(&quot;doctor&quot;, visita.getDoctor());
+        model.addAttribute(&quot;recepcionista&quot;, visita.getRecepcionista());
+        model.addAttribute(&quot;visita&quot;, visita);
+        model.addAttribute(&quot;fin&quot;, &quot;yes&quot;);
+        
+        return &quot;info-visita&quot;;
+        
+        //return &quot;redirect:/listVisitas&quot;;
+        
+    }
+    
+    //Añade observaciones a una visita
+    @PostMapping(value = &quot;/addObservaciones/{id}&quot;)
+    public String addContrato(Principal principal, Model model,  
+            @PathVariable(&quot;id&quot;) long id,
+            @RequestParam(&quot;observaciones&quot;) String observaciones){
+        
+        Visita visita = recepcionistaDao.findOneVisita(id);
+        
+        model.addAttribute(&quot;paciente&quot;, visita.getPaciente());
+        model.addAttribute(&quot;doctor&quot;, visita.getDoctor());
+        model.addAttribute(&quot;recepcionista&quot;, visita.getRecepcionista());
+        model.addAttribute(&quot;visita&quot;, visita);
+        
+        
+        //Solo modificamos las visitas que se encuentran pendientes y que sean propias
+        if(!visita.getEstado().equals(&quot;Pendiente&quot;) || !visita.getDoctor().getDni().equals(principal.getName())){
+            model.addAttribute(&quot;notPermit&quot;, &quot;Esta acción no está permitida, solo puedes añadir observaciones en visitas pendientes y propias&quot;);
+            
+            model.addAttribute(&quot;fin&quot;, &quot;no&quot;);
+            
+            return &quot;info-visita&quot;;
+        }
+        else{
+            visita.setObservaciones(observaciones);
+            visita.setEstado(&quot;Finalizada&quot;);
+            
+            model.addAttribute(&quot;fin&quot;, &quot;no&quot;);
+            
+            doctorDao.mergeVisita(visita);
+            
+            return &quot;info-visita&quot;;
+        }
+        
+    }
+    
+    //PRUEBAS################################################################################################################################################
+    
+    //Lista todas las pruebas
+    @RequestMapping(value=&quot;/listPruebas&quot;, method = RequestMethod.GET)
+    public String listPruebas(Locale locale, Model model, Principal principal) {
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoMedicina(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para doctores o directores.&quot;);
+            mensajes.add(&quot;Solo un doctor o directivo pueden consultar todas las pruebas realizadas.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }
+        
+        Usuario usuario = usuarioDao.usuario(principal.getName());
+        
+        List&lt;Prueba&gt; pruebas = doctorDao.getAllPruebas();
+        
+        model.addAttribute(&quot;pruebas&quot;, pruebas);
+        
+        return &quot;pruebas-list&quot;;
+    }
+    
+    //Lista las pruebas de un paciente
+    @RequestMapping(value=&quot;/listPruebas/{dni}&quot;, method = RequestMethod.GET)
+    public String listPruebasOfPacient(Locale locale, Model model, Principal principal,
+            @PathVariable(&quot;dni&quot;) String dni) {
+        
+        ///////////////////////////////////////////////////     
+        accessCheck.metodoUsuario(principal.getName());
+        ///////////////////////////////////////////////////
+        
+        Usuario usuario = usuarioDao.usuario(principal.getName());
+        
+        Paciente paciente = pacienteDao.getPaciente(dni);
+        
+        List&lt;Prueba&gt; pruebas = doctorDao.getAllPruebasOfPacient(paciente);
+        
+        model.addAttribute(&quot;pruebas&quot;, pruebas);
+        
+        return &quot;pruebas-list&quot;;
+    }
+    
+    //Lista las pruebas de un tipo de prueba concreto
+    @RequestMapping(value=&quot;/pruebasDe/{id}&quot;, method = RequestMethod.GET)
+    public String listPruebasOfTipoPrueba(Locale locale, Model model, Principal principal,
+            @PathVariable(&quot;id&quot;) long id) {
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoMedicina(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para empleados.&quot;);
+            mensajes.add(&quot;Solo un empleado puede consultar las pruebas de un paciente.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }
+        
+        Usuario usuario = usuarioDao.usuario(principal.getName());
+        
+        List&lt;Prueba&gt; pruebas = doctorDao.getAllPruebasOfTipoPrueba(doctorDao.getTipoPruebaById(id));
+        
+        model.addAttribute(&quot;pruebas&quot;, pruebas);
+        
+        return &quot;pruebas-list&quot;;
+    }
+    
+    
+    //Muestra el formulario para añadir una nueva prueba de un paciente
+    @RequestMapping(value=&quot;/addPrueba&quot;, method = RequestMethod.GET)
+    public String addPrueba(Locale locale, Model model, Principal principal) {
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoDoctor(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para doctores.&quot;);
+            mensajes.add(&quot;Solo un doctor puede añadir nuevas pruebas sobre un paciente.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }
+        
+        List&lt;Paciente&gt; pacientes = pacienteDao.getPacientes();
+        
+        List&lt;TipoPrueba&gt; tiposPruebas = usuarioDao.listAllTipoPruebas();
+        
+        model.addAttribute(&quot;pacientes&quot;, pacientes);
+        model.addAttribute(&quot;tiposPruebas&quot;, tiposPruebas);
+        
+        return &quot;add-prueba-form&quot;;
+    }
+    
+    //Añade una nueva prueba de un paciente en la BBDD
+    @PostMapping(value = &quot;/addPrueba&quot;)
+    public String addPrueba(Principal principal, Model model,  
+            @RequestParam(&quot;dniPaciente&quot;) String dni,
+            @RequestParam(&quot;idTipoPrueba&quot;) long idTipoPrueba,
+            @RequestParam(&quot;observaciones&quot;) String observaciones){
+        
+        Paciente paciente = pacienteDao.getPaciente(dni);
+        TipoPrueba tipoPrueba = usuarioDao.listOneTipoPruebas(idTipoPrueba);
+        
+        Prueba prueba = new Prueba();
+        
+        prueba.setFecha(LocalDate.now());
+        prueba.setPaciente(paciente);
+        prueba.setObservaciones(observaciones);
+        prueba.setTipo(tipoPrueba);
+        
+        doctorDao.mergePrueba(prueba);
+        
+        return &quot;redirect:/dash&quot;;
+    }
+    
+    //Muestra información de una prueba concreta
+    @RequestMapping(value=&quot;/prueba/{id}&quot;, method = RequestMethod.GET)
+    public String listOnePrueba(Locale locale, Model model, Principal principal,
+            @PathVariable(&quot;id&quot;) long id) {
+        
+        ///////////////////////////////////////////////////     
+        accessCheck.metodoUsuario(principal.getName());
+        ///////////////////////////////////////////////////
+        
+        Usuario usuario = usuarioDao.usuario(principal.getName());
+        
+        Prueba prueba = doctorDao.getPruebaById(id);
+
+        model.addAttribute(&quot;prueba&quot;, prueba);
+        model.addAttribute(&quot;addResult&quot;, false);
+        
+        return &quot;info-prueba&quot;;
+    }
+    
+    //RESULTADOS################################################################################################################################################
+    
+    //Muestra el formulario para a��adir un nuevo resultado
+    @RequestMapping(value=&quot;/addResultado/{id}&quot;, method = RequestMethod.GET)
+    public String addResultadoForm(Principal principal, Model model,  
+            @PathVariable(&quot;id&quot;) long id){
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoDoctor(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para doctores.&quot;);
+            mensajes.add(&quot;Solo un doctor puede añadir nuevos resultados sobre una prueba.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }
+        
+        Prueba prueba = doctorDao.getPruebaById(id);
+        
+        model.addAttribute(&quot;prueba&quot;, prueba);
+        model.addAttribute(&quot;addResult&quot;, true);
+        
+        return &quot;info-prueba&quot;;
+    }
+    
+    //Muestra el formulario para modificar un resultado existente
+    @RequestMapping(value=&quot;/modResultado/{id}&quot;, method = RequestMethod.GET)
+    public String modResultadoForm(Principal principal, Model model,  
+            @PathVariable(&quot;id&quot;) long id){
+        
+        try {
+            ///////////////////////////////////////////////////
+            accessCheck.metodoDoctor(principal.getName());
+            ///////////////////////////////////////////////////
+        } catch (AccessDeniedException e) {
+            List&lt;String&gt; mensajes = new ArrayList&lt;String&gt;();
+            model.addAttribute(&quot;error&quot;,&quot;Acceso no Permitido.&quot;);
+            mensajes.add(&quot;Esta pagina es solo para doctores.&quot;);
+            mensajes.add(&quot;Solo un doctor puede modificar resultados sobre una prueba.&quot;);
+            model.addAttribute(&quot;mensajes&quot;,mensajes);
+            return &quot;mensaje&quot;;
+        }
+        
+        Resultado resultado = doctorDao.getResultadoById(id);
+        
+        model.addAttribute(&quot;prueba&quot;, resultado.getPrueba());
+        model.addAttribute(&quot;existResult&quot;, resultado);
+        
+        model.addAttribute(&quot;modResult&quot;, true);
+        
+        return &quot;info-prueba&quot;;
+    }
+    
+    //Añade una nuevo resultado de una prueba en la BBDD
+    @PostMapping(value = &quot;/addResultado/{id}&quot;)
+    public String addResultado(Principal principal, Model model,  
+            @RequestParam(&quot;resultado&quot;) int resultado,
+            @RequestParam(&quot;comentarios&quot;) String comentarios,
+            @PathVariable(&quot;id&quot;) long id){
+        
+        Prueba prueba = doctorDao.getPruebaById(id);
+        
+        Resultado newResultado = new Resultado();
+                
+        newResultado.setPrueba(prueba);
+        newResultado.setResultado(resultado);
+        newResultado.setComentarios(comentarios);
+        
+        doctorDao.mergeResultado(newResultado);
+        
+        
+        return &quot;redirect:/prueba/&quot;+id;
+    }
+    
+    //Modifica un resultado existente de una prueba en la BBDD
+    @PostMapping(value = &quot;/modResultado/{id}&quot;)
+    public String modResultado(Principal principal, Model model,  
+            @RequestParam(&quot;resultado&quot;) int resultado,
+            @RequestParam(&quot;comentarios&quot;) String comentarios,
+            @PathVariable(&quot;id&quot;) long id){
+        
+        Resultado newResultado = doctorDao.getResultadoById(id);
+                
+        newResultado.setResultado(resultado);
+        newResultado.setComentarios(comentarios);
+        
+        doctorDao.mergeResultado(newResultado);
+        
+        return &quot;redirect:/prueba/&quot;+newResultado.getPrueba().getId();
+    }
+
+}
+</code></pre>
+</section>
+<section id="entities" class="level2">
+<h2>Entities</h2>
+<pre><code>package org.escoladeltreball.proyectowiaw2.entities;
+
+@Entity(name = &quot;DoctorEntity&quot;)
+@Table(name = &quot;doctor&quot;)
+@PrimaryKeyJoinColumn(name = &quot;id&quot;, referencedColumnName = &quot;id&quot;)
+@NamedQueries(value = {
+        @NamedQuery(name = &quot;findAllDoctors&quot;, query = &quot;SELECT d FROM DoctorEntity d&quot;),
+        @NamedQuery(name = &quot;findAllDoctorsActivos&quot;, query = &quot;SELECT d FROM DoctorEntity d where d.activo = true&quot;),
+        @NamedQuery(name = &quot;findAllCabecera&quot;, query = &quot;SELECT d FROM DoctorEntity d where d.especialidad = &#39;cabecera&#39; and d.activo = true&quot;),
+        @NamedQuery(name = &quot;findAllCabeceraDni&quot;, query = &quot;SELECT d.dni FROM DoctorEntity d where d.especialidad = &#39;cabecera&#39; and d.activo = true&quot;),
+        @NamedQuery(name = &quot;findDoctorByDni&quot;, query = &quot;SELECT d FROM DoctorEntity d where d.dni = :dni&quot;),
+        @NamedQuery(name = &quot;findDoctorById&quot;, query = &quot;SELECT d FROM DoctorEntity d where d.id = :id&quot;),
+    })
+public class Doctor extends Empleado implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    @Column(nullable=false)
+    private String especialidad;
+    
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE},orphanRemoval=true, mappedBy= &quot;doctorCabecera&quot;, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List&lt;Paciente&gt; pacientes;
+    
+    
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE},orphanRemoval=true, mappedBy= &quot;doctor&quot;,  fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List&lt;Visita&gt; visitas;
+    
+    public Doctor(){
+        super();
+    }
+
+    public Doctor(String especialidad, List&lt;Paciente&gt; pacientes, List&lt;Visita&gt; visitas) {
+        this.especialidad = especialidad;
+        this.pacientes = pacientes;
+        this.visitas = visitas;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public List&lt;Paciente&gt; getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(List&lt;Paciente&gt; pacientes) {
+        this.pacientes = pacientes;
+    }
+
+    public List&lt;Visita&gt; getVisitas() {
+        return visitas;
+    }
+
+    public void setVisitas(List&lt;Visita&gt; visitas) {
+        this.visitas = visitas;
+    }
+    
+}
+</code></pre>
+</section>
+<section id="bean" class="level2">
+<h2>Bean</h2>
+<pre><code>package org.escoladeltreball.proyectowiaw2.beans;
+
+public class UsuarioBean {
+    
+    @ValidDni
+    private String dni;
+    
+    private String password;
+    
+    private boolean activo;
+    
+    private String nombre;
+    
+    private String apellidos;
+    
+    private LocalDate fecha_nacimiento;
+    
+    private String codigoPostal;
+    
+    private String direccion;
+    
+    private long telefono;
+    
+    @ValidEmail
+    private String email;
+    
+    //Inverse
+    private List&lt;Autoridad&gt; autoridades = new ArrayList&lt;Autoridad&gt;();
+    
+    
+    public UsuarioBean(){
+        super();
+    }
+
+
+    public UsuarioBean(String dni, String password, boolean activo, String nombre, String apellidos,
+            LocalDate fecha_nacimiento, String codigoPostal, String direccion, long telefono, String email,
+            List&lt;Autoridad&gt; autoridades) {
+        this.dni = dni;
+        this.password = password;
+        this.activo = activo;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.codigoPostal = codigoPostal;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.autoridades = autoridades;
+    }
+
+
+    public String getDni() {
+        return dni;
+    }
+
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+
+    public LocalDate getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+
+    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+
+    public long getTelefono() {
+        return telefono;
+    }
+
+
+    public void setTelefono(long telefono) {
+        this.telefono = telefono;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public List&lt;Autoridad&gt; getAutoridades() {
+        return autoridades;
+    }
+
+
+    public void setAutoridades(List&lt;Autoridad&gt; autoridades) {
+        this.autoridades = autoridades;
+    }
+
+
+    @Override
+    public String toString() {
+        return &quot;UsuarioBean [dni=&quot; + dni + &quot;, password=&quot; + password + &quot;, activo=&quot; + activo + &quot;, nombre=&quot; + nombre
+                + &quot;, apellidos=&quot; + apellidos + &quot;, fecha_nacimiento=&quot; + fecha_nacimiento + &quot;, codigoPostal=&quot;
+                + codigoPostal + &quot;, direccion=&quot; + direccion + &quot;, telefono=&quot; + telefono + &quot;, email=&quot; + email
+                + &quot;, autoridades=&quot; + autoridades + &quot;]&quot;;
+    }
+
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (activo ? 1231 : 1237);
+        result = prime * result + ((apellidos == null) ? 0 : apellidos.hashCode());
+        result = prime * result + ((autoridades == null) ? 0 : autoridades.hashCode());
+        result = prime * result + ((codigoPostal == null) ? 0 : codigoPostal.hashCode());
+        result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
+        result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+        result = prime * result + ((email == null) ? 0 : email.hashCode());
+        result = prime * result + ((fecha_nacimiento == null) ? 0 : fecha_nacimiento.hashCode());
+        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+        result = prime * result + ((password == null) ? 0 : password.hashCode());
+        result = prime * result + (int) (telefono ^ (telefono &gt;&gt;&gt; 32));
+        return result;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        UsuarioBean other = (UsuarioBean) obj;
+        if (activo != other.activo)
+            return false;
+        if (apellidos == null) {
+            if (other.apellidos != null)
+                return false;
+        } else if (!apellidos.equals(other.apellidos))
+            return false;
+        if (autoridades == null) {
+            if (other.autoridades != null)
+                return false;
+        } else if (!autoridades.equals(other.autoridades))
+            return false;
+        if (codigoPostal == null) {
+            if (other.codigoPostal != null)
+                return false;
+        } else if (!codigoPostal.equals(other.codigoPostal))
+            return false;
+        if (direccion == null) {
+            if (other.direccion != null)
+                return false;
+        } else if (!direccion.equals(other.direccion))
+            return false;
+        if (dni == null) {
+            if (other.dni != null)
+                return false;
+        } else if (!dni.equals(other.dni))
+            return false;
+        if (email == null) {
+            if (other.email != null)
+                return false;
+        } else if (!email.equals(other.email))
+            return false;
+        if (fecha_nacimiento == null) {
+            if (other.fecha_nacimiento != null)
+                return false;
+        } else if (!fecha_nacimiento.equals(other.fecha_nacimiento))
+            return false;
+        if (nombre == null) {
+            if (other.nombre != null)
+                return false;
+        } else if (!nombre.equals(other.nombre))
+            return false;
+        if (password == null) {
+            if (other.password != null)
+                return false;
+        } else if (!password.equals(other.password))
+            return false;
+        if (telefono != other.telefono)
+            return false;
+        return true;
+    }   
+}
+</code></pre>
+</section>
+<section id="validation" class="level2">
+<h2>Validation</h2>
+<pre><code>package org.escoladeltreball.proyectowiaw2.validation;
+
+public class DniValidator implements ConstraintValidator&lt;ValidDni, String&gt;{
+    
+    @PersistenceContext
+    protected EntityManager manager;
+    
+    private Pattern pattern;
+    private Matcher matcher;
+    
+    @Override
+    public void initialize(ValidDni constraintAnnotation) {}
+    
+    @Override
+    public boolean isValid(String dni, ConstraintValidatorContext context) {
+        return (uniqueDni(dni));
+    }
+    
+    //Controla que el DNI no este repetido
+    private boolean uniqueDni(String dni) {
+        Query queryDnis = manager.createNamedQuery(&quot;findAllDnis&quot;);
+        
+        List&lt;String&gt; dnis = queryDnis.getResultList();
+        
+        for(String oneDni: dnis){
+            if(dni.equals(oneDni)){
+                return false;
+            }
+        }
+        
+        manager.close();
+        return true;
+    }
+}
+</code></pre>
+</section>
+<section id="accesscheck" class="level2">
+<h2>AccessCheck</h2>
+<pre><code>package org.escoladeltreball.proyectowiaw2;
+
+public interface AccessCheck {
+
+    @Secured({&quot;ROLE_PACIENTE&quot;})
+    void metodoPaciente(String dni);
+
+    @Secured({&quot;ROLE_RECEPCIONISTA&quot;})
+    void metodoRecepcionista(String dni);
+
+    @Secured({&quot;ROLE_DOCTOR&quot;})
+    void metodoDoctor(String dni);
+    
+    @Secured({&quot;ROLE_DIRECTOR&quot;})
+    void metodoDirector(String dni);
+    
+    @Secured({&quot;ROLE_RECEPCIONISTA&quot;,&quot;ROLE_DOCTOR&quot;,&quot;ROLE_DIRECTOR&quot;})
+    void metodoEmpleado(String dni);
+    
+    @Secured({&quot;ROLE_RECEPCIONISTA&quot;,&quot;ROLE_DOCTOR&quot;,&quot;ROLE_DIRECTOR&quot;, &quot;ROLE_PACIENTE&quot;})
+    void metodoUsuario(String dni);
+    
+    @Secured({&quot;ROLE_DIRECTOR&quot;, &quot;ROLE_RECEPCIONISTA&quot;})
+    void metodoOficina(String dni);
+    
+    @Secured({&quot;ROLE_DIRECTOR&quot;,&quot;ROLE_DOCTOR&quot;})
+    void metodoMedicina(String dni);
+}
+</code></pre>
+</section>
+<section id="plugins" class="level2">
+<h2>Plugins</h2>
+<blockquote>
+<ul>
+<li>Jquery Validate</li>
+<li>Data Tables</li>
+</ul>
+</blockquote>
+</section>
+<section id="jquery-validate" class="level2">
+<h2>Jquery Validate</h2>
+<p>Permite validar los formularios en cliente de manera simple y eficaz.</p>
+</section>
+<section id="jquery-validate-1" class="level2">
+<h2>Jquery Validate</h2>
+<pre><code>//Is numeric
+jQuery.validator.addMethod(&quot;onlyNumbers&quot;, function(value, element, param) {
+    return jQuery.isNumeric(value);
+});
+
+jQuery.validator.addMethod( &quot;nieES&quot;, function ( value, element ) {
+     &quot;use strict&quot;;
+     
+     value = value.toUpperCase();
+     
+     // Basic format test
+     if ( !value.match(&#39;((^[A-Z]{1}[0-9]{7}[A-Z0-9]{1}$|^[T]{1}[A-Z0-9]{8}$)|^[0-9]{8}[A-Z]{1}$)&#39;) ) {
+      return false;
+     }
+     
+     // Test NIE
+     //T
+     if ( /^[T]{1}/.test( value ) ) {
+      return ( value[ 8 ] === /^[T]{1}[A-Z0-9]{8}$/.test( value ) );
+     }
+     
+     //XYZ
+     if ( /^[XYZ]{1}/.test( value ) ) {
+      return (
+       value[ 8 ] === &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;.charAt(
+        value.replace( &#39;X&#39;, &#39;0&#39; )
+         .replace( &#39;Y&#39;, &#39;1&#39; )
+         .replace( &#39;Z&#39;, &#39;2&#39; )
+         .substring( 0, 8 ) % 23
+       )
+      );
+     }
+     
+     return false;
+     
+    }, &quot;Please specify a valid NIE number.&quot; );
+    
+//Valid DNI
+jQuery.validator.addMethod( &quot;nifES&quot;, function ( value, element ) {
+     &quot;use strict&quot;;
+     
+     value = value.toUpperCase();
+     
+     // Basic format test
+     if ( !value.match(&#39;((^[A-Z]{1}[0-9]{7}[A-Z0-9]{1}$|^[T]{1}[A-Z0-9]{8}$)|^[0-9]{8}[A-Z]{1}$)&#39;) ) {
+      return false;
+     }
+     
+     // Test NIF
+     if ( /^[0-9]{8}[A-Z]{1}$/.test( value ) ) {
+      return ( &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;.charAt( value.substring( 8, 0 ) % 23 ) === value.charAt( 8 ) );
+     }
+     // Test specials NIF (starts with K, L or M)
+     if ( /^[KLM]{1}/.test( value ) ) {
+      return ( value[ 8 ] === String.fromCharCode( 64 ) );
+     }
+     
+     return false;
+
+});
+
+$.validator.addMethod(&quot;nif_or_nie&quot;, function(value, element) {
+    var nifES = $.validator.methods[&quot;nifES&quot;];
+    var nieES = $.validator.methods[&quot;nieES&quot;];
+
+    return nifES.call(this, value, element) || nieES.call(this, value, element);
+});
+
+
+
+$(function() {
+
+    $(&quot;form&quot;).validate({
+    
+        //Custom error class for parent div of element
+        highlight: function(element) {
+            $(element).parent().addClass(&quot;has-error&quot;);
+        },
+        unhighlight: function(element) {
+            $(element).parent().removeClass(&quot;has-error&quot;);
+        },
+        // Reglas de validación
+        rules: {
+            //DOCTOR
+            nombre: {
+                minlength: 2,
+                required: true,
+                notNumber: true
+            },
+            apellidos: {
+                minlength: 2,
+                required: true,
+                notNumber: true
+            },
+            dni: {
+                nif_or_nie: true
+            },
+        },
+        // Specify validation error messages
+        messages: {
+          nombre: {
+            required: &quot;Por favor introduce un nombre&quot;,
+            minlength: &quot;La longitud debe ser superior a 2 caràcteres&quot;,
+            notNumber: &quot;El nombre no puede contener números&quot;
+          },
+          apellidos: {
+            required: &quot;Por favor introduce un apellido&quot;,
+            minlength: &quot;La longitud debe ser superior a 2 caràcteres&quot;,
+            notNumber: &quot;El apellido no puede contener números&quot;
+          },
+          dni: {
+              nif_or_nie: &quot;El DNI/NIE introducido no es válido&quot;
+          }
+        },
+        submitHandler: function(form) {
+          form.submit();
+        }
+    });
+});</code></pre>
+</section>
+<section id="data-tables" class="level2">
+<h2>Data Tables</h2>
+<p>Añade la funcionalidad de ordenar, paginar y buscar elementos en una tabla.</p>
+</section>
+<section id="data-tables-1" class="level2">
+<h2>Data Tables</h2>
+<pre><code>$(document).ready(function() {
+    $(&quot;#tableDoctores&quot;).DataTable({
+        &quot;scrollX&quot;: true,
+        &quot;scrollY&quot;: true
+    });
+} );</code></pre>
+</section>
+</section>
+<section id="bugsproblemas" class="level1">
+<h1>Bugs/Problemas</h1>
+<section id="explicación" class="level2">
+<h2>Explicación</h2>
+<p>En esta parte hablaremos de las funcionalidades que no hemos podido añadir, debido a complicaciones y falta de tiempo.</p>
+</section>
+<section id="un-empleado-no-puede-ser-a-la-vez-paciente" class="level2">
+<h2>Un empleado no puede ser a la vez paciente</h2>
+<p>Problema con Inheritance de Java.<br> Solución encontrada pero sin tiempo para implementarla.</p>
+</section>
+<section id="no-podemos-almacenar-carácteres-especiales-en-la-bbdd" class="level2">
+<h2>No podemos almacenar carácteres especiales en la BBDD</h2>
+<p>Pensabamos que sería más simple, y finalmente no hemos tenido tiempo de solucionarlo.</p>
+</section>
+<section id="alternativa-a-js" class="level2">
+<h2>Alternativa a JS</h2>
+<p>Podría ser que el cliente no tenga JavaScript activado por X o Y razones.</p>
+<blockquote>
+<ul>
+<li>Seria recomendable tener una alternativa en las secciones que utilizan bastante JS y jQuery.</li>
+</ul>
+</blockquote>
+</section>
+<section id="control-de-errores" class="level2">
+<h2>Control de errores</h2>
+<p>Es posible que se hayan escapado algunos casos en los que se muestra una pantalla de error de Tomcat.</p>
+</section>
+</section>
+<section id="demo" class="level1">
+<h1>Demo</h1>
+</section>
+<section id="fin" class="level1">
+<h1>Fin</h1>
+<figure>
+<img src="img/fin.jpg" />
+</figure>
+</section>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'sky', 
+  
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+  
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+  });
+
+</script>
+
+</body>
+</html>

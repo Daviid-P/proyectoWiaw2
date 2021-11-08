@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/DirectorController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/DoctorController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/EmpleadoController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/PacienteController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/controllers/UsuarioController.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/repositories/DirectorDAO.java=UTF-8
+encoding//src/main/java/org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java=UTF-8
+encoding/<project>=UTF-8

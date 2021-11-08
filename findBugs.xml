@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.2-dev-20160306-90c514b" sequence="1" timestamp="1494943700361" analysisTimestamp="1494943682473" release="">
+  <Project projectName="ProyectoWiaw2">
+    <Jar>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/target/test-classes</Jar>
+    <Jar>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/target/classes</Jar>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/target/test-classes</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/pdfbox/2.0.5/pdfbox-2.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/fontbox/2.0.5/fontbox-2.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/jempbox/1.8.13/jempbox-1.8.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/xmpbox/2.0.5/xmpbox-2.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/preflight/2.0.5/preflight-2.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/pdfbox-tools/2.0.5/pdfbox-tools-2.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/pdfbox/pdfbox-debugger/2.0.5/pdfbox-debugger-2.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-context/4.3.5.RELEASE/spring-context-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-beans/4.3.5.RELEASE/spring-beans-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-expression/4.3.5.RELEASE/spring-expression-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-webmvc/4.3.5.RELEASE/spring-webmvc-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-web/4.3.5.RELEASE/spring-web-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-jdbc/4.3.5.RELEASE/spring-jdbc-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/data/spring-data-jpa/1.8.0.RELEASE/spring-data-jpa-1.8.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/data/spring-data-commons/1.10.0.RELEASE/spring-data-commons-1.10.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.10/jcl-over-slf4j-1.7.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-tx/4.3.5.RELEASE/spring-tx-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-aop/4.3.5.RELEASE/spring-aop-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-test/4.3.5.RELEASE/spring-test-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-context-support/4.3.5.RELEASE/spring-context-support-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-core/4.3.5.RELEASE/spring-core-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/spring-orm/4.3.5.RELEASE/spring-orm-4.3.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/security/spring-security-web/4.1.4.RELEASE/spring-security-web-4.1.4.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/security/spring-security-core/4.1.4.RELEASE/spring-security-core-4.1.4.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/security/spring-security-config/4.1.4.RELEASE/spring-security-config-4.1.4.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/security/spring-security-taglibs/4.1.4.RELEASE/spring-security-taglibs-4.1.4.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/springframework/security/spring-security-acl/4.1.4.RELEASE/spring-security-acl-4.1.4.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/hibernate/hibernate-entitymanager/5.2.6.Final/hibernate-entitymanager-5.2.6.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/hibernate/hibernate-core/5.2.6.Final/hibernate-core-5.2.6.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/jboss/jandex/2.0.3.Final/jandex-2.0.3.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/enterprise/cdi-api/1.1/cdi-api-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/el/el-api/2.2/el-api-2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.0.Beta1/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/net/bytebuddy/byte-buddy/1.5.4/byte-buddy-1.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/net/sf/ehcache/ehcache/2.10.0/ehcache-2.10.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/aspectj/aspectjrt/1.7.0/aspectjrt-1.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/aspectj/aspectjweaver/1.7.0/aspectjweaver-1.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/postgresql/postgresql/9.4.1211.jre7/postgresql-9.4.1211.jre7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-fileupload/commons-fileupload/1.3.2/commons-fileupload-1.3.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-io/commons-io/2.2/commons-io-2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-jsp/3.0.5/tiles-jsp-3.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-request-jsp/1.0.6/tiles-request-jsp-1.0.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-request-api/1.0.6/tiles-request-api-1.0.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-servlet/3.0.5/tiles-servlet-3.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-core/3.0.5/tiles-core-3.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-digester/commons-digester/2.0/commons-digester-2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-request-servlet/1.0.6/tiles-request-servlet-1.0.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-template/3.0.5/tiles-template-3.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-api/3.0.5/tiles-api-3.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-autotag-core-runtime/1.1.0/tiles-autotag-core-runtime-1.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/tiles/tiles-el/3.0.5/tiles-el-3.0.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/github/stefanbirkner/system-rules/1.11.0/system-rules-1.11.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/junit/junit/4.11-beta-1/junit-4.11-beta-1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/mail/mail/1.4.7/mail-1.4.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.6/jackson-core-2.8.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.6/jackson-annotations-2.8.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/thymeleaf/thymeleaf/3.0.0.RELEASE/thymeleaf-3.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/ognl/ognl/3.1.3/ognl-3.1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/attoparser/attoparser/2.0.0.RELEASE/attoparser-2.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/unbescape/unbescape/1.1.3.RELEASE/unbescape-1.1.3.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/thymeleaf/thymeleaf-spring4/3.0.0.RELEASE/thymeleaf-spring4-3.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/thymeleaf/extras/thymeleaf-extras-springsecurity4/3.0.0.RELEASE/thymeleaf-extras-springsecurity4-3.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.0.RELEASE/thymeleaf-extras-java8time-3.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/net/sourceforge/pagesdialect/pagesdialect-core/2.1.6/pagesdialect-core-2.1.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/net/sourceforge/dynamicreports/dynamicreports-core/2.5.1/dynamicreports-core-2.5.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/net/sf/jasperreports/jasperreports/4.5.1/jasperreports-4.5.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/commons-collections/commons-collections/2.1/commons-collections-2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/jfree/jcommon/1.0.15/jcommon-1.0.15.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/jfree/jfreechart/1.0.12/jfreechart-1.0.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/xml-apis/xml-apis/1.3.02/xml-apis-1.3.02.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/eclipse/jdtcore/3.1.0/jdtcore-3.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/codehaus/castor/castor/1.2/castor-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/poi/poi-ooxml/3.7/poi-ooxml-3.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/poi/poi/3.7/poi-3.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.7/poi-ooxml-schemas-3.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0/geronimo-stax-api_1.0_spec-1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/codehaus/jackson/jackson-core-lgpl/1.7.4/jackson-core-lgpl-1.7.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/codehaus/jackson/jackson-mapper-lgpl/1.7.4/jackson-mapper-lgpl-1.7.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.1/jaxb-impl-2.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/xml/bind/jaxb-api/2.2.1/jaxb-api-2.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/net/sf/barcode4j/barcode4j/2.0/barcode4j-2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/avalon-framework/avalon-framework-impl/4.2.0/avalon-framework-impl-4.2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/nz/net/ultraq/thymeleaf/thymeleaf-layout-dialect/1.2.1/thymeleaf-layout-dialect-1.2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/bootstrap/3.3.5/bootstrap-3.3.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/x-editable-bootstrap/1.5.1/x-editable-bootstrap-1.5.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/datatables/1.10.13/datatables-1.10.13.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/font-awesome/4.7.0/font-awesome-4.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/jquery/2.1.4/jquery-2.1.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/jquery-ui/1.11.4/jquery-ui-1.11.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/jquery-validation/1.15.1/jquery-validation-1.15.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/org/webjars/bootstrapvalidator/0.5.3/bootstrapvalidator-0.5.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/users/inf/wiaw2/iaw47891984/.m2/repository/joda-time/joda-time/2.8.2/joda-time-2.8.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/usr/java/jdk1.8.0_101/jre/lib/rt.jar</AuxClasspathEntry>
+    <SrcDir>/ProyectoWiaw2/src/test/java</SrcDir>
+    <SrcDir>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/src/main/resources</SrcDir>
+    <SrcDir>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/src/main/java</SrcDir>
+    <SrcDir>/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/ProyectoWiaw2/src/test/resources</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="ICAST_INTEGER_MULTIPLY_CAST_TO_LONG" priority="2" rank="17" abbrev="ICAST" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.MySpringContextConfig">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.MySpringContextConfig" sourcefile="MySpringContextConfig.java" sourcepath="org/escoladeltreball/proyectowiaw2/MySpringContextConfig.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.MySpringContextConfig" name="multipartResolver" signature="()Lorg/springframework/web/multipart/commons/CommonsMultipartResolver;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.MySpringContextConfig" start="135" end="140" startBytecode="0" endBytecode="111" sourcefile="MySpringContextConfig.java" sourcepath="org/escoladeltreball/proyectowiaw2/MySpringContextConfig.java"/>
+    </Method>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.MySpringContextConfig" start="138" end="138" startBytecode="18" endBytecode="18" sourcefile="MySpringContextConfig.java" sourcepath="org/escoladeltreball/proyectowiaw2/MySpringContextConfig.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.MySpringContextConfig" start="138" end="138" startBytecode="18" endBytecode="18" sourcefile="MySpringContextConfig.java" sourcepath="org/escoladeltreball/proyectowiaw2/MySpringContextConfig.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD" priority="1" rank="9" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" name="setObservaciones" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" start="69" end="70" startBytecode="0" endBytecode="2" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    </Method>
+    <LocalVariable name="observaciones" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <Field classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" name="observaciones" signature="Ljava/lang/String;" isStatic="false" role="FIELD_DID_YOU_MEAN">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    </Field>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" start="69" end="69" startBytecode="1" endBytecode="1" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" start="69" end="69" startBytecode="1" endBytecode="1" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.COPY_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.IS_PARAMETER" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="observaciones"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.SHADOWS_FIELD" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.TWO_STORES_MULTIPLE_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="SA_LOCAL_SELF_ASSIGNMENT_INSTEAD_OF_FIELD" priority="1" rank="5" abbrev="SA" category="CORRECTNESS" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" name="setObservaciones" signature="(Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" start="69" end="70" startBytecode="0" endBytecode="58" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    </Method>
+    <LocalVariable name="observaciones" register="1" pc="1" role="LOCAL_VARIABLE_NAMED"/>
+    <Field classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" name="observaciones" signature="Ljava/lang/String;" isStatic="false" role="FIELD_DID_YOU_MEAN">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+    </Field>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" start="69" end="69" startBytecode="1" endBytecode="1" sourcefile="VisitaBean.java" sourcepath="org/escoladeltreball/proyectowiaw2/beans/VisitaBean.java"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="1" rank="14" abbrev="ES" category="BAD_PRACTICE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.DirectorController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DirectorController" sourcefile="DirectorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DirectorController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.DirectorController" name="updateContrato" signature="(Lorg/escoladeltreball/proyectowiaw2/beans/ContratoBean;Lorg/springframework/validation/BindingResult;Lorg/springframework/ui/Model;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DirectorController" start="235" end="263" startBytecode="0" endBytecode="98" sourcefile="DirectorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DirectorController.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <String value="" role="STRING_CONSTANT"/>
+    <LocalVariable name="finContrato" register="6" pc="103" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DirectorController" start="248" end="248" startBytecode="105" endBytecode="105" sourcefile="DirectorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DirectorController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DirectorController" start="248" end="248" startBytecode="105" endBytecode="105" sourcefile="DirectorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DirectorController.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER_IN_PUBLIC_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.DoctorController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DoctorController" sourcefile="DoctorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DoctorController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.DoctorController" name="listOnePrueba" signature="(Ljava/util/Locale;Lorg/springframework/ui/Model;Ljava/security/Principal;J)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DoctorController" start="221" end="229" startBytecode="0" endBytecode="20" sourcefile="DoctorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DoctorController.java"/>
+    </Method>
+    <LocalVariable name="resultados" register="7" pc="18" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DoctorController" start="223" end="223" startBytecode="16" endBytecode="16" sourcefile="DoctorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DoctorController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.DoctorController" start="223" end="223" startBytecode="16" endBytecode="16" sourcefile="DoctorController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/DoctorController.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="resultados"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" name="descargarExpEmp" signature="(Ljava/util/Locale;Ljavax/servlet/http/HttpServletResponse;Ljava/security/Principal;Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="78" end="110" startBytecode="0" endBytecode="85" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47752902/Proyecto-Wiaw2/proyectoWiaw2/expedientes/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="92" end="92" startBytecode="78" endBytecode="78" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="92" end="92" startBytecode="78" endBytecode="78" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" name="descargarExpEmp" signature="(Ljava/util/Locale;Ljavax/servlet/http/HttpServletResponse;Ljava/security/Principal;Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="78" end="110" startBytecode="0" endBytecode="85" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/expedientes/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="89" end="89" startBytecode="54" endBytecode="54" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="89" end="89" startBytecode="54" endBytecode="54" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" name="descargarExpUser" signature="(Ljava/util/Locale;Ljavax/servlet/http/HttpServletResponse;Ljava/security/Principal;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="38" end="70" startBytecode="0" endBytecode="82" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47752902/Proyecto-Wiaw2/proyectoWiaw2/expedientes/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="49" end="49" startBytecode="69" endBytecode="69" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="49" end="49" startBytecode="69" endBytecode="69" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" name="descargarExpUser" signature="(Ljava/util/Locale;Ljavax/servlet/http/HttpServletResponse;Ljava/security/Principal;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="38" end="70" startBytecode="0" endBytecode="82" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/expedientes/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="46" end="46" startBytecode="45" endBytecode="45" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" start="46" end="46" startBytecode="45" endBytecode="45" sourcefile="FileDownloadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileDownloadController.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" name="avatar" signature="(Ljava/util/Locale;Lorg/springframework/ui/Model;Ljava/security/Principal;Lorg/springframework/web/multipart/MultipartFile;Lorg/springframework/web/servlet/mvc/support/RedirectAttributes;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" start="34" end="69" startBytecode="0" endBytecode="84" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47752902/Proyecto-Wiaw2/proyectoWiaw2/avatar/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" start="45" end="45" startBytecode="74" endBytecode="74" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" start="45" end="45" startBytecode="74" endBytecode="74" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" name="avatar" signature="(Ljava/util/Locale;Lorg/springframework/ui/Model;Ljava/security/Principal;Lorg/springframework/web/multipart/MultipartFile;Lorg/springframework/web/servlet/mvc/support/RedirectAttributes;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" start="34" end="69" startBytecode="0" endBytecode="84" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/avatar/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" start="42" end="42" startBytecode="50" endBytecode="50" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" start="42" end="42" startBytecode="50" endBytecode="50" sourcefile="FileUploadController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/FileUploadController.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" name="addEmpPacienteEndPoint" signature="(Ljava/security/Principal;Lorg/springframework/ui/Model;Lorg/escoladeltreball/proyectowiaw2/beans/PacienteBean;Lorg/springframework/validation/BindingResult;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="150" end="160" startBytecode="0" endBytecode="6" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    </Method>
+    <LocalVariable name="doctorCabecera" register="8" pc="11" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="150" end="150" startBytecode="9" endBytecode="9" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="150" end="150" startBytecode="9" endBytecode="9" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="doctorCabecera"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="GC_UNRELATED_TYPES" priority="1" rank="1" abbrev="GC" category="CORRECTNESS" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" name="altaPaciente" signature="(Ljava/util/Locale;Lorg/springframework/ui/Model;Ljava/security/Principal;Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="228" end="235" startBytecode="0" endBytecode="25" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="111" end="3141" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Type>
+    <Type descriptor="Lorg/escoladeltreball/proyectowiaw2/entities/Autoridad;" role="TYPE_EXPECTED">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.Autoridad" start="38" end="69" sourcefile="Autoridad.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/Autoridad.java"/>
+    </Type>
+    <Method classname="java.util.List" name="contains" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.List" sourcefile="List.java" sourcepath="java/util/List.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_EQUALS_USED">
+      <SourceLine classname="java.lang.String" start="977" end="995" startBytecode="0" endBytecode="208" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+    </Method>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="231" end="231" startBytecode="18" endBytecode="18" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="231" end="231" startBytecode="18" endBytecode="18" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    </Class>
+    <Field classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" name="dtf2" signature="Ljava/time/format/DateTimeFormatter;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+    </Field>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" start="67" end="67" startBytecode="19" endBytecode="19" sourcefile="RecepcionistaController.java" sourcepath="org/escoladeltreball/proyectowiaw2/controllers/RecepcionistaController.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" name="getExpiryDate" signature="()Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" start="93" end="93" startBytecode="0" endBytecode="46" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    </Method>
+    <Field classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" name="expiryDate" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    </Field>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" start="93" end="93" startBytecode="4" endBytecode="4" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" start="93" end="93" startBytecode="4" endBytecode="4" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" name="setExpiryDate" signature="(Ljava/util/Date;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" start="97" end="98" startBytecode="0" endBytecode="61" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    </Method>
+    <Field classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" name="expiryDate" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    </Field>
+    <LocalVariable name="expiryDate" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" start="97" end="97" startBytecode="2" endBytecode="2" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" start="97" end="97" startBytecode="2" endBytecode="2" sourcefile="PasswordResetToken.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/PasswordResetToken.java"/>
+  </BugInstance>
+  <BugInstance type="SA_FIELD_SELF_ASSIGNMENT" priority="1" rank="1" abbrev="SA" category="CORRECTNESS" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" sourcefile="TipoPrueba.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/TipoPrueba.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" name="&lt;init&gt;" signature="(JLjava/lang/String;Ljava/lang/String;ZLjava/util/List;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" start="52" end="58" startBytecode="0" endBytecode="169" sourcefile="TipoPrueba.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/TipoPrueba.java"/>
+    </Method>
+    <Field classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" name="nombre" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" sourcefile="TipoPrueba.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/TipoPrueba.java"/>
+    </Field>
+    <LocalVariable name="?" register="2" pc="0" role="LOCAL_VARIABLE_DID_YOU_MEAN"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" start="54" end="54" startBytecode="14" endBytecode="14" sourcefile="TipoPrueba.java" sourcepath="org/escoladeltreball/proyectowiaw2/entities/TipoPrueba.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.mail.Mail">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.mail.Mail" name="getMailSendDate" signature="()Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" start="127" end="127" startBytecode="0" endBytecode="46" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    </Method>
+    <Field classname="org.escoladeltreball.proyectowiaw2.mail.Mail" name="sendDate" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    </Field>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" start="127" end="127" startBytecode="4" endBytecode="4" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" start="127" end="127" startBytecode="4" endBytecode="4" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.mail.Mail">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.mail.Mail" name="setMailSendDate" signature="(Ljava/util/Date;)V" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" start="123" end="124" startBytecode="0" endBytecode="61" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    </Method>
+    <Field classname="org.escoladeltreball.proyectowiaw2.mail.Mail" name="sendDate" signature="Ljava/util/Date;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    </Field>
+    <LocalVariable name="sendDate" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" start="123" end="123" startBytecode="2" endBytecode="2" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.mail.Mail" start="123" end="123" startBytecode="2" endBytecode="2" sourcefile="Mail.java" sourcepath="org/escoladeltreball/proyectowiaw2/mail/Mail.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.DirectorDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.DirectorDAO" sourcefile="DirectorDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/DirectorDAO.java"/>
+    </Class>
+    <Field classname="org.escoladeltreball.proyectowiaw2.repositories.DirectorDAO" name="df" signature="Ljava/text/DateFormat;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.DirectorDAO" sourcefile="DirectorDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/DirectorDAO.java"/>
+    </Field>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.DirectorDAO" start="34" end="34" startBytecode="14" endBytecode="14" sourcefile="DirectorDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/DirectorDAO.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO" sourcefile="EmpleadoDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/EmpleadoDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO" name="checkEmpExist" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO" start="45" end="49" startBytecode="0" endBytecode="18" sourcefile="EmpleadoDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/EmpleadoDAO.java"/>
+    </Method>
+    <LocalVariable name="empleado" register="3" pc="30" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO" start="46" end="46" startBytecode="29" endBytecode="29" sourcefile="EmpleadoDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/EmpleadoDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO" start="46" end="46" startBytecode="29" endBytecode="29" sourcefile="EmpleadoDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/EmpleadoDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="empleado"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" name="addObservacion" signature="(Ljava/lang/String;Lorg/escoladeltreball/proyectowiaw2/entities/Paciente;Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="73" end="75" startBytecode="0" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Method>
+    <LocalVariable name="doctor" register="4" pc="7" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="73" end="73" startBytecode="5" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="73" end="73" startBytecode="5" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="doctor"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" name="setAnalitica" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="39" end="41" startBytecode="0" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Method>
+    <LocalVariable name="doctor" register="2" pc="6" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="39" end="39" startBytecode="5" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="39" end="39" startBytecode="5" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="doctor"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" name="setResultado" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="46" end="48" startBytecode="0" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Method>
+    <LocalVariable name="doctor" register="2" pc="6" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="46" end="46" startBytecode="5" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="46" end="46" startBytecode="5" endBytecode="5" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="doctor"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" name="addObservacion" signature="(Ljava/lang/String;Lorg/escoladeltreball/proyectowiaw2/entities/Paciente;Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="73" end="75" startBytecode="0" endBytecode="94" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Method>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="75" end="75" startBytecode="8" endBytecode="8" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="75" end="75" startBytecode="8" endBytecode="8" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" name="setAnalitica" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="39" end="41" startBytecode="0" endBytecode="73" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Method>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="41" end="41" startBytecode="7" endBytecode="7" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="41" end="41" startBytecode="7" endBytecode="7" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" name="setResultado" signature="(Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="46" end="48" startBytecode="0" endBytecode="73" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    </Method>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="48" end="48" startBytecode="7" endBytecode="7" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" start="48" end="48" startBytecode="7" endBytecode="7" sourcefile="JefeMedicinaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/JefeMedicinaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO" sourcefile="PacienteDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/PacienteDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO" name="sendEmail" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO" start="72" end="78" startBytecode="0" endBytecode="12" sourcefile="PacienteDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/PacienteDAO.java"/>
+    </Method>
+    <LocalVariable name="docEmail" register="5" pc="19" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO" start="76" end="76" startBytecode="17" endBytecode="17" sourcefile="PacienteDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/PacienteDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO" start="76" end="76" startBytecode="17" endBytecode="17" sourcefile="PacienteDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/PacienteDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="docEmail"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" name="createPDF" signature="(Ljava/lang/String;)Z" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="413" end="543" startBytecode="0" endBytecode="358" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Method>
+    <LocalVariable name="fields" register="11" pc="318" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="450" end="450" startBytecode="316" endBytecode="316" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="450" end="450" startBytecode="316" endBytecode="316" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="fields"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" name="createPDF" signature="(Ljava/lang/String;)Z" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="413" end="543" startBytecode="0" endBytecode="358" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47752902/Proyecto-Wiaw2/proyectoWiaw2/expedientes/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="426" end="426" startBytecode="56" endBytecode="56" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="426" end="426" startBytecode="56" endBytecode="56" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="1" rank="15" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" name="createPDF" signature="(Ljava/lang/String;)Z" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="413" end="543" startBytecode="0" endBytecode="358" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Method>
+    <String value="/home/users/inf/wiaw2/iaw47891984/Documents/proyectoWiaw2/expedientes/" role="FILE_NAME"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="423" end="423" startBytecode="31" endBytecode="31" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="423" end="423" startBytecode="31" endBytecode="31" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" name="createPDF" signature="(Ljava/lang/String;)Z" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="413" end="543" startBytecode="0" endBytecode="1848" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Method>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="534" end="534" startBytecode="847" endBytecode="847" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="534" end="534" startBytecode="847" endBytecode="847" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_OBJECT" priority="2" rank="17" abbrev="UC" category="STYLE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Class>
+    <Method classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" name="createPDF" signature="(Ljava/lang/String;)Z" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="413" end="543" startBytecode="0" endBytecode="1848" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+    </Method>
+    <String value="ap"/>
+    <Type descriptor="Lorg/apache/pdfbox/pdmodel/encryption/AccessPermission;">
+      <SourceLine classname="org.apache.pdfbox.pdmodel.encryption.AccessPermission" start="62" end="461" sourcefile="AccessPermission.java" sourcepath="org/apache/pdfbox/pdmodel/encryption/AccessPermission.java"/>
+    </Type>
+    <SourceLine classname="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" start="433" end="433" startBytecode="174" endBytecode="174" sourcefile="RecepcionistaDAO.java" sourcepath="org/escoladeltreball/proyectowiaw2/repositories/RecepcionistaDAO.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator" sourcefile="DniValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/DniValidator.java"/>
+    </Class>
+    <Field classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator" name="matcher" signature="Ljava/util/regex/Matcher;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator" start="19" end="19" startBytecode="0" endBytecode="0" sourcefile="DniValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/DniValidator.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator" sourcefile="DniValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/DniValidator.java"/>
+    </Class>
+    <Field classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator" name="pattern" signature="Ljava/util/regex/Pattern;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.DniValidator" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="DniValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/DniValidator.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" sourcefile="EmailValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/EmailValidator.java"/>
+    </Class>
+    <Field classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" name="matcher" signature="Ljava/util/regex/Matcher;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" start="19" end="19" startBytecode="0" endBytecode="0" sourcefile="EmailValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/EmailValidator.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" sourcefile="EmailValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/EmailValidator.java"/>
+    </Class>
+    <Field classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" name="pattern" signature="Ljava/util/regex/Pattern;" isStatic="false">
+      <SourceLine classname="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="EmailValidator.java" sourcepath="org/escoladeltreball/proyectowiaw2/validation/EmailValidator.java"/>
+    </Field>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 15 May 2017 18:06:31 +0200" total_classes="60" referenced_classes="324" total_bugs="37" total_size="3011" num_packages="8" java_version="1.8.0_101" vm_version="25.101-b13" cpu_seconds="225.54" clock_seconds="127.42" peak_mbytes="916.03" alloc_mbytes="1067.00" gc_seconds="2.61" priority_2="24" priority_1="13">
+    <PackageStats package="org.escoladeltreball.proyectowiaw2" total_bugs="1" total_types="9" total_size="181" priority_2="1">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.AccessCheck" sourceFile="AccessCheck.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.AccessCheckImpl" sourceFile="AccessCheckImpl.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.LocalDateConverter" sourceFile="LocalDateConverter.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.LocalDateTimeConverter" sourceFile="LocalDateTimeConverter.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.MyDispatcherServletConfig" sourceFile="MyDispatcherServletConfig.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.MySecurityWebApplicationInitializer" sourceFile="MySecurityWebApplicationInitializer.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.MySpringContextConfig" sourceFile="MySpringContextConfig.java" interface="false" size="58" bugs="1" priority_2="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.MyWebInitializer" sourceFile="MyWebInitializer.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.MyWebSecurityConfig" sourceFile="MyWebSecurityConfig.java" interface="false" size="26" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.beans" total_bugs="2" total_types="5" total_size="488" priority_1="2">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.beans.ChangeProfileBean" sourceFile="ChangeProfileBean.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.beans.ContratoBean" sourceFile="ContratoBean.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.beans.PacienteBean" sourceFile="PacienteBean.java" interface="false" size="172" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.beans.UsuarioBean" sourceFile="UsuarioBean.java" interface="false" size="163" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.beans.VisitaBean" sourceFile="VisitaBean.java" interface="false" size="51" bugs="2" priority_1="2"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.controllers" total_bugs="11" total_types="12" total_size="812" priority_2="3" priority_1="8">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.DirectorController" sourceFile="DirectorController.java" interface="false" size="152" bugs="1" priority_1="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.DoctorController" sourceFile="DoctorController.java" interface="false" size="106" bugs="1" priority_2="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.EmpleadoController" sourceFile="EmpleadoController.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.FileDownloadController" sourceFile="FileDownloadController.java" interface="false" size="43" bugs="4" priority_1="4"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.FileUploadController" sourceFile="FileUploadController.java" interface="false" size="26" bugs="2" priority_1="2"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.HomeController" sourceFile="HomeController.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.InboxController" sourceFile="InboxController.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.LoginController" sourceFile="LoginController.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.PacienteController" sourceFile="PacienteController.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.RecepcionistaController" sourceFile="RecepcionistaController.java" interface="false" size="190" bugs="3" priority_2="2" priority_1="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.ResetPasswordController" sourceFile="ResetPasswordController.java" interface="false" size="60" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.controllers.UsuarioController" sourceFile="UsuarioController.java" interface="false" size="64" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.entities" total_bugs="3" total_types="14" total_size="622" priority_2="2" priority_1="1">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Autoridad" sourceFile="Autoridad.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Contrato" sourceFile="Contrato.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Director" sourceFile="Director.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Doctor" sourceFile="Doctor.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Empleado" sourceFile="Empleado.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Expediente" sourceFile="Expediente.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Paciente" sourceFile="Paciente.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.PasswordResetToken" sourceFile="PasswordResetToken.java" interface="false" size="87" bugs="2" priority_2="2"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Prueba" sourceFile="Prueba.java" interface="false" size="50" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Recepcionista" sourceFile="Recepcionista.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Resultado" sourceFile="Resultado.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.TipoPrueba" sourceFile="TipoPrueba.java" interface="false" size="43" bugs="1" priority_1="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Usuario" sourceFile="Usuario.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.entities.Visita" sourceFile="Visita.java" interface="false" size="64" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.exceptions" total_bugs="0" total_types="3" total_size="35">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.exceptions.DownloadDeniedException" sourceFile="DownloadDeniedException.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.exceptions.GlobalExceptionHandler" sourceFile="GlobalExceptionHandler.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.exceptions.PdfCreationException" sourceFile="PdfCreationException.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.mail" total_bugs="2" total_types="4" total_size="179" priority_2="2">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.mail.Inbox" sourceFile="Inbox.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.mail.Mail" sourceFile="Mail.java" interface="false" size="126" bugs="2" priority_2="2"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.mail.MailService" sourceFile="MailService.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.mail.MailServiceImpl" sourceFile="MailServiceImpl.java" interface="false" size="17" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.repositories" total_bugs="14" total_types="9" total_size="643" priority_2="12" priority_1="2">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.DirectorDAO" sourceFile="DirectorDAO.java" interface="false" size="173" bugs="1" priority_2="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.DoctorDAO" sourceFile="DoctorDAO.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.EmpleadoDAO" sourceFile="EmpleadoDAO.java" interface="false" size="18" bugs="1" priority_2="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.JefeMedicinaDAO" sourceFile="JefeMedicinaDAO.java" interface="false" size="29" bugs="6" priority_2="6"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.PacienteDAO" sourceFile="PacienteDAO.java" interface="false" size="29" bugs="1" priority_2="1"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.PasswordResetTokenDAO" sourceFile="PasswordResetTokenDAO.java" interface="false" size="52" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.RecepcionistaDAO" sourceFile="RecepcionistaDAO.java" interface="false" size="255" bugs="5" priority_2="3" priority_1="2"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.Test" sourceFile="Test.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.repositories.UsuarioDAO" sourceFile="UsuarioDAO.java" interface="false" size="37" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="org.escoladeltreball.proyectowiaw2.validation" total_bugs="4" total_types="4" total_size="51" priority_2="4">
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.validation.DniValidator" sourceFile="DniValidator.java" interface="false" size="21" bugs="2" priority_2="2"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.validation.EmailValidator" sourceFile="EmailValidator.java" interface="false" size="22" bugs="2" priority_2="2"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.validation.ValidDni" sourceFile="ValidDni.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="org.escoladeltreball.proyectowiaw2.validation.ValidEmail" sourceFile="ValidEmail.java" interface="true" size="4" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1103" invocations="1884" avgMicrosecondsPerInvocation="585" maxMicrosecondsPerInvocation="51210" standardDeviationMircosecondsPerInvocation="2283"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="992" invocations="2" avgMicrosecondsPerInvocation="496265" maxMicrosecondsPerInvocation="709793" standardDeviationMircosecondsPerInvocation="213528"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="770" invocations="324" avgMicrosecondsPerInvocation="2377" maxMicrosecondsPerInvocation="62199" standardDeviationMircosecondsPerInvocation="6081"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="736" invocations="1898" avgMicrosecondsPerInvocation="388" maxMicrosecondsPerInvocation="40711" standardDeviationMircosecondsPerInvocation="1559"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="654" invocations="324" avgMicrosecondsPerInvocation="2019" maxMicrosecondsPerInvocation="36630" standardDeviationMircosecondsPerInvocation="4117"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="555" invocations="525" avgMicrosecondsPerInvocation="1058" maxMicrosecondsPerInvocation="23777" standardDeviationMircosecondsPerInvocation="2605"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="510" invocations="533" avgMicrosecondsPerInvocation="957" maxMicrosecondsPerInvocation="47228" standardDeviationMircosecondsPerInvocation="3326"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="416" invocations="537" avgMicrosecondsPerInvocation="775" maxMicrosecondsPerInvocation="27904" standardDeviationMircosecondsPerInvocation="2434"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="415" invocations="537" avgMicrosecondsPerInvocation="772" maxMicrosecondsPerInvocation="33878" standardDeviationMircosecondsPerInvocation="2847"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="409" invocations="533" avgMicrosecondsPerInvocation="768" maxMicrosecondsPerInvocation="35778" standardDeviationMircosecondsPerInvocation="2466"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="405" invocations="969" avgMicrosecondsPerInvocation="418" maxMicrosecondsPerInvocation="20529" standardDeviationMircosecondsPerInvocation="1178"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="338" invocations="533" avgMicrosecondsPerInvocation="634" maxMicrosecondsPerInvocation="41020" standardDeviationMircosecondsPerInvocation="2456"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="226" invocations="286" avgMicrosecondsPerInvocation="791" maxMicrosecondsPerInvocation="32933" standardDeviationMircosecondsPerInvocation="2400"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="186" invocations="324" avgMicrosecondsPerInvocation="576" maxMicrosecondsPerInvocation="17335" standardDeviationMircosecondsPerInvocation="1607"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="186" invocations="324" avgMicrosecondsPerInvocation="575" maxMicrosecondsPerInvocation="37377" standardDeviationMircosecondsPerInvocation="2672"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="186" invocations="324" avgMicrosecondsPerInvocation="574" maxMicrosecondsPerInvocation="14292" standardDeviationMircosecondsPerInvocation="1326"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="185" invocations="533" avgMicrosecondsPerInvocation="348" maxMicrosecondsPerInvocation="22832" standardDeviationMircosecondsPerInvocation="1354"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="156" invocations="545" avgMicrosecondsPerInvocation="286" maxMicrosecondsPerInvocation="33822" standardDeviationMircosecondsPerInvocation="1704"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="145" invocations="324" avgMicrosecondsPerInvocation="450" maxMicrosecondsPerInvocation="25160" standardDeviationMircosecondsPerInvocation="1668"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="144" invocations="324" avgMicrosecondsPerInvocation="446" maxMicrosecondsPerInvocation="7653" standardDeviationMircosecondsPerInvocation="826"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="136" invocations="324" avgMicrosecondsPerInvocation="422" maxMicrosecondsPerInvocation="12509" standardDeviationMircosecondsPerInvocation="1391"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="135" invocations="60" avgMicrosecondsPerInvocation="2264" maxMicrosecondsPerInvocation="18914" standardDeviationMircosecondsPerInvocation="3956"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="124" invocations="324" avgMicrosecondsPerInvocation="382" maxMicrosecondsPerInvocation="17789" standardDeviationMircosecondsPerInvocation="1581"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="122" invocations="8892" avgMicrosecondsPerInvocation="13" maxMicrosecondsPerInvocation="11086" standardDeviationMircosecondsPerInvocation="231"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="110" invocations="1828" avgMicrosecondsPerInvocation="60" maxMicrosecondsPerInvocation="7822" standardDeviationMircosecondsPerInvocation="236"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="100" invocations="60" avgMicrosecondsPerInvocation="1681" maxMicrosecondsPerInvocation="12607" standardDeviationMircosecondsPerInvocation="2588"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="100" invocations="60" avgMicrosecondsPerInvocation="1679" maxMicrosecondsPerInvocation="66558" standardDeviationMircosecondsPerInvocation="8675"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1494943700355" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

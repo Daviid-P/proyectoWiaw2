@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+	
+	<!-- Data Tables -->
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+	#deceased{
+		background-color:#FFF3F5;
+		padding-top:10px;
+		margin-bottom:10px;
+	}
+	.remove_field{
+		float:right;	
+		cursor:pointer;
+		position : absolute;
+	}
+	.remove_field:hover{
+		text-decoration:none;
+	}
+	
+	.border-box{
+		outline: 1px solid black;
+	}
+	
+	.glyphicon-remove{
+		right: 20px;
+		display: none;
+	}
+	
+	.has-error .glyphicon-remove{
+		display: block !important;	
+	}
+	
+	.error {
+	  color: #F00;
+	  background-color: #FFF;
+	}
+</style>
+	<title>Info prueba</title>
+</head>
+<body class="container-fluid">	
+	<div th:if="${notPermit != null}" class="alert alert-danger">
+  		<ul>
+			<li th:text="${notPermit}">error</li> <!-- Troba els errors i els mostra -->
+		</ul>
+	</div>
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4>Información Prueba <span th:text="${prueba.id}"></span></h4>
+	<div class="row">
+		<div class="col-xs-6">
+			<p>Fecha: <span th:text="${prueba.fecha}"></span></p>
+		</div>
+		<div sec:authorize="hasRole('ROLE_DOCTOR')" class="col-xs-6 text-right">
+			<a th:href="@{/addResultado/{id}(id=${prueba.id})}" class="btn btn-warning">
+				<span class='glyphicon glyphicon-exclamation-sign'></span> Añadir Resultado
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>
+			Paciente:
+			<a th:href="@{/expediente/{dni}(dni=${prueba.paciente.dni})}">
+				<span th:text="${prueba.paciente.nombre} + ' ' + ${prueba.paciente.apellidos} + ' -- DNI: ' + ${prueba.paciente.dni}"></span>
+			</a> 
+			
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>Tipo de Prueba: <span th:text="${prueba.tipo.nombre}"></span></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>Descripción Tipo de Prueba: <span th:text="${prueba.tipo.descripcion}"></span></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h4>Observaciones:</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p th:text="${prueba.observaciones}"></p>
+		</div>
+	</div>
+	
+	<h4>Resultados:</h4>
+	<table class="table table-bordered display" width="100%" id="tableResult">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Resultado</th>
+				<th>Comentarios</th>
+				<th sec:authorize="hasRole('ROLE_DOCTOR')">Modificar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="resultado : ${prueba.resultados}">
+				<td th:text="${resultado.id}"></td>
+				<td>
+					<p th:if="${resultado.resultado == 1}" th:text="Negativo" style="color: green;"></p>
+					<p th:if="${resultado.resultado == 2}" th:text="Positivo-Leve" style="color: orange;"></p>
+					<p th:if="${resultado.resultado == 3}" th:text="Positivo-Grave" style="color: red;"></p>
+					<p th:if="${resultado.resultado == 4}" th:text="Positivo-Muy-Grave" style="color: red;"></p>
+				</td>
+				<td th:text="${resultado.comentarios}"></td>
+				<td sec:authorize="hasRole('ROLE_DOCTOR')">
+					<a th:href="@{/modResultado/{id}(id=${resultado.id})}" class="btn btn-warning">
+						<span class='glyphicon glyphicon-exclamation-sign'></span> Modificar Resultado
+					</a>				
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div th:if="${addResult == true}" class="panel-body">
+		<form id="formRegistro" method="post" action="#" th:action="@{/addResultado/{id}(id=${prueba.id})}">
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<h3>Añadir Resultado</h5>
+					<div class="row">
+						<div class="form-group col-xs-12 resultado has-feedback">
+							<label for="resultado">Resultado*</label>
+							<input type="radio" th:name="resultado" th:value="1"/> Negativo
+							<input type="radio" th:name="resultado" th:value="2"/> Positivo Leve
+							<input type="radio" th:name="resultado" th:value="3"/> Positivo Grave
+							<input type="radio" th:name="resultado" th:value="4"/> Positivo Muy Grave
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-xs-12 comentarios has-feedback">
+							<label for="comentarios">Comentarios*</label>
+							<textarea class="form-control input-sm" name="comentarios" rows="5" placeholder="Comentarios sobre el resultado..."></textarea>
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-12 col-sm-12" id="addblock">
+				<div class="form-group col-md-3 col-sm-3">
+					<input id="submit" type='submit' class="btn btn-primary" value="Añadir"/>
+				</div>
+			</div>
+	
+			</div>
+		</form>
+	</div>
+	
+	<div th:if="${modResult == true}" class="panel-body">
+		<form id="formRegistro" method="post" action="#" th:action="@{/modResultado/{id}(id=${existResult.id})}">
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<h3>Modificar Resultado</h5>
+					<div class="row">
+						<div class="form-group col-xs-12 resultado has-feedback">
+							<label for="resultado">Resultado*</label>
+							<input type="radio" th:name="resultado" th:value="1"/> Negativo
+							<input type="radio" th:name="resultado" th:value="2"/> Positivo Leve
+							<input type="radio" th:name="resultado" th:value="3"/> Positivo Grave
+							<input type="radio" th:name="resultado" th:value="4"/> Positivo Muy Grave
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-xs-12 comentarios has-feedback">
+							<label for="comentarios">Comentarios*</label>
+							<textarea class="form-control input-sm" name="comentarios" rows="5" placeholder="Comentarios sobre el resultado..." th:text="${existResult.comentarios}"></textarea>
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-12 col-sm-12" id="addblock">
+				<div class="form-group col-md-3 col-sm-3">
+					<input id="submit" type='submit' class="btn btn-primary" value="Modificar"/>
+				</div>
+			</div>
+	
+			</div>
+		</form>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tableResult").DataTable();
+	} );
+	
+	$(function() {
+
+		$("form").validate({
+		
+			//Custom error class for parent div of element
+			highlight: function(element) {
+				$(element).parent().addClass("has-error");
+			},
+			unhighlight: function(element) {
+				$(element).parent().removeClass("has-error");
+			},
+			// Reglas de validación
+			rules: {
+				comentarios: {
+					minlength: 5,
+					required: true
+				},
+				resultado: {
+					required: true
+				}
+				
+			},
+			// Specify validation error messages
+			messages: {
+				comentarios: {
+					minlength: "Texto demasiado corto",
+					required: "Es necesario rellenar este campo"
+				},
+				resultado: {
+					required: "**"
+				}
+			},
+			// Make sure the form is submitted to the destination defined
+			// in the "action" attribute of the form when valid
+			submitHandler: function(form) {
+			  form.submit();
+			}
+		});
+	});
+</script>
+</body>
+</html>

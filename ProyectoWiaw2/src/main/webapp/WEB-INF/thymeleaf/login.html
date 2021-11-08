@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<title>Login</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row" th:if="${error != null}" style="margin-top: 30px;">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-8">
+				<ul class="list-group">
+					<li class="list-group-item list-group-item-danger" th:each="err : ${error}" th:utext="${err}"></li>
+				</ul>
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-4">
+			<form class="form-signin" th:action="@{${url}}" method='POST'>
+				<h2 class="form-signin-heading">Please sign in</h2>
+				<label for="dni" class="sr-only" th:unless="${url}">DNI</label>
+				<input type="text" name="dni" id="dni" class="form-control" placeholder="Dni" required="" autofocus="" th:unless="${url}"/>
+				<label for="inputPassword" class="sr-only"><span th:if="${url} == '/inbox'">Email </span>Password</label>
+				<input type="password" name="password" id="inputPassword" class="form-control" th:placeholder="${url}=='/inbox'? 'Email Password': 'Password'" required=""/>
+				<input class="btn btn-lg btn-primary" type="submit" name="Submit" value="Submit"/>
+				<div class="login-help">
+					<a th:href="${url}=='/inbox' ? 'https://accounts.google.com/signin/recovery' : @{/resetPassword}">Has olvidado tu contraseña?</a>
+				</div>
+			</form>
+		</div>
+		<div class="col-xs-4"></div>
+		</div>
+	</div>
+</body>
+
+</html>

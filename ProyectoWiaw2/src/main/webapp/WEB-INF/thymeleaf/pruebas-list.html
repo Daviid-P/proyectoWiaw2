@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<!-- Data Tables -->
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	<title>Listado de Pruebas.</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4> Listado de Pruebas.</h4>
+	<table class="table table-bordered display" width="100%" id="tablePruebas">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Fecha</th>
+				<th sec:authorize="hasAnyRole('ROLE_DOCTOR', 'ROLE_DIRECTOR')">Paciente</th>
+				<th>Tipo de Prueba</th>
+				<th>Resultados</th>
+				<th sec:authorize="hasRole('ROLE_DOCTOR')">Añadir Resultado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="prueba : ${pruebas}">
+				<td th:text="${prueba.id}"></td>
+				<td th:text="${prueba.fecha}"></td>
+				<td sec:authorize="hasAnyRole('ROLE_DOCTOR', 'ROLE_DIRECTOR')">
+					<a th:href="@{/expediente/{dni}(dni=${prueba.paciente.dni})}">
+						<span th:text="${prueba.paciente.nombre} + ' ' + ${prueba.paciente.apellidos} + ' -- DNI: ' + ${prueba.paciente.dni}"></span>
+					</a>
+					
+				</td>
+				<td th:text="${prueba.tipo.nombre}"></td>	
+				<td>
+					<a th:href="@{/prueba/{id}(id=${prueba.id})}" class="btn btn-primary">
+						<span class='glyphicon glyphicon-list-alt'></span> Información
+					</a>				
+				</td>
+				<td sec:authorize="hasRole('ROLE_DOCTOR')">
+					<a th:href="@{/addResultado/{id}(id=${prueba.id})}" class="btn btn-warning">
+						<span class='glyphicon glyphicon-exclamation-sign'></span> Añadir Resultado
+					</a>				
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tablePruebas").DataTable({
+	    	"scrollX": true,
+	    	"scrollY": true
+	    });
+	} );
+</script>
+</body>
+</html>

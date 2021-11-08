@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+#deceased{
+	background-color:#FFF3F5;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.remove_field{
+	float:right;	
+	cursor:pointer;
+	position : absolute;
+}
+.remove_field:hover{
+	text-decoration:none;
+}
+
+.border-box{
+	outline: 1px solid black;
+}
+
+.glyphicon-remove{
+	right: 20px;
+	display: none;
+}
+
+.has-error .glyphicon-remove{
+	display: block !important;	
+}
+
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
+
+
+</style>
+	<title>Nueva Prueba General</title>
+</head>
+<body>
+<div th:replace="templates/header :: header"></div>
+
+<div class="panel panel-primary" style="margin:20px;">
+	<div class="panel-heading">
+			<h3 class="panel-title">Añadir Prueba General</h3>
+	</div>
+<div class="panel-body">
+	<form id="formRegistro" method="post" action="#" th:action="@{${url}}" th:object="${tipoPrueba}" >	
+		<div class="col-md-12 col-sm-12">
+			<div class="row">
+				<h3>Datos Tipo de Prueba</h5>
+				<div class="row">
+					<div class="form-group col-sm-12 nombre has-feedback">
+						<label for="DOB">Nombre*</label>
+						<input type="text" class="form-control input-sm" name="nombre" id="nombre" placeholder="Sangre" th:field="*{nombre}">
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-12 has-feedback">
+						<label for="sueldo">Descripción*</label>
+						<textarea class="form-control input-sm" name="descripcion" rows="3" placeholder="Descripción del tipo de prueba" th:field="*{descripcion}"></textarea>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+				</div>
+			</div>
+
+		<div class="col-md-12 col-sm-12" id="addblock">
+			<div class="form-group col-md-3 col-sm-3">
+				<input type='submit' class="btn btn-primary" value="Añadir"/>
+			</div>
+		</div>
+
+		</div>
+	</form>
+</div>
+<div class="row">
+	<div class="col-xs-12 text-right">
+		<a onclick="goBack()" class="btn btn-success">Volver</a>
+	</div>
+</div>
+
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<script type='text/javascript'>
+
+//VALIDATION
+function goBack() {
+    window.history.back();
+}	
+	
+//No numbers
+jQuery.validator.addMethod("notNumber", function(value, element, param) {
+	var reg = /[0-9]/;
+	if(reg.test(value)){
+		return false;
+	}else{
+		return true;
+	}
+});
+
+$(function() {
+
+	$("form").validate({
+		//Custom error class for parent div of element
+		highlight: function(element) {
+			$(element).parent().addClass("has-error");
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass("has-error");
+		},
+		// Reglas de validación
+		rules: {
+			nombre: {
+				required: true,
+				minlength: 2,
+			},
+			descripcion: {
+				required: true,
+				minlength: 9,
+			}
+		},
+		// Specify validation error messages
+		messages: {
+			nombre: {
+				required: "Es necesario introducir un nombre",
+				minlength: "Nombre demasiado corto"
+			},
+			descripcion: {
+				required: "Es necesario introducir una descripción",
+				minlength: "Descripción demasiado corta"
+			}
+		},
+		// Make sure the form is submitted to the destination defined
+		// in the "action" attribute of the form when valid
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	});
+});
+
+	</script>
+</body>
+</html>

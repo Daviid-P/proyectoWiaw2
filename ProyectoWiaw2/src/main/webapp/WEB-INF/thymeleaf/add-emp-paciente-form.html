@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+#deceased{
+	background-color:#FFF3F5;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.remove_field{
+	float:right;	
+	cursor:pointer;
+	position : absolute;
+}
+.remove_field:hover{
+	text-decoration:none;
+}
+
+.border-box{
+	outline: 1px solid black;
+}
+
+.glyphicon-remove{
+	right: 20px;
+	display: none;
+}
+
+.has-error .glyphicon-remove{
+	display: block !important;	
+}
+
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
+
+
+</style>
+	<title>Nuevo Paciente</title>
+</head>
+<body>
+<div th:replace="templates/header :: header"></div>
+
+<div class="panel panel-primary" style="margin:20px;">
+	<div class="panel-heading">
+			<h3 class="panel-title">Añadir Paciente ya registrado cómo Empleado</h3>
+	</div>
+<div class="panel-body">
+	<form id="formRegistro" method="post" action="#" th:action="@{/addEmpPaciente}">
+		<div class="col-md-12 col-sm-12">
+			<div class="row">
+				<h3>Datos Paciente</h5>
+				<div class="row">
+					<div class="form-group col-sm-4 dni has-feedback">
+						<label for="dni">Dni Empleado:</label>
+						<input type="text" class="form-control input-sm" name="dni" id="dni" placeholder="12345678A">
+						<label th:if="${empNoExist != null}" id="dni-error" class="error" for="dni" th:text="${empNoExist}"></label>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-sm-4 tipo has-feedback">
+						<label for="doctor">Doctor de Cabecera*</label>
+						<select name="doctorCabeceraDni" class="form-control input-sm" id="doctorCabeceraDni">
+							<option value="auto">Autoasignación</option>
+							<option th:each="oneDoctorCabecera : ${doctoresCabecera}" th:value="${oneDoctorCabecera.dni}" th:text="${oneDoctorCabecera.nombre} + ' ' + ${oneDoctorCabecera.apellidos} + ' ' + ${oneDoctorCabecera.dni}">a</option>
+						</select>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+					<div class="form-group col-sm-4 habitacion has-feedback">
+						<label for="habitacion">Número habitación</label>
+						<input type="text" class="form-control input-sm" name="habitacion" id="habitacion" placeholder="10">
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+				</div>
+
+			</div>
+		<div class="col-md-12 col-sm-12" id="addblock">
+			<div class="form-group col-md-3 col-sm-3">
+				<input id="submit" type='submit' class="btn btn-primary" value="Insertar"/>
+			</div>
+		</div>
+
+		</div>
+	</form>
+</div>
+
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<script type='text/javascript'>
+
+//VALIDATION
+$("#submit").click(function(){
+	var hab = $("#habitacion").val();
+	if(hab == ""){
+		$("#habitacion").val(0);
+	}
+});
+
+//Las habitaciones de la 1 a la 9 no se pueden asignar
+jQuery.validator.addMethod("rangeHab", function(value, element, param) {
+	num = parseInt(value);
+	if( num < 0 || (num >= 1 && num <= 9)){
+		return false;
+	}
+	else{
+		return true;
+	}
+});
+
+//Is numeric
+jQuery.validator.addMethod("onlyNumbers", function(value, element, param) {
+	return jQuery.isNumeric(value);
+});
+
+//Valid DNI
+jQuery.validator.addMethod( "validDni", function ( value, element ) {
+	 "use strict";
+	 
+	 value = value.toUpperCase();
+	 
+	 // Basic format test
+	 if ( !value.match('((^[A-Z]{1}[0-9]{7}[A-Z0-9]{1}$|^[T]{1}[A-Z0-9]{8}$)|^[0-9]{8}[A-Z]{1}$)') ) {
+	  return false;
+	 }
+	 
+	 // Test NIF
+	 if ( /^[0-9]{8}[A-Z]{1}$/.test( value ) ) {
+	  return ( "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 0 ) % 23 ) === value.charAt( 8 ) );
+	 }
+	 // Test specials NIF (starts with K, L or M)
+	 if ( /^[KLM]{1}/.test( value ) ) {
+	  return ( value[ 8 ] === String.fromCharCode( 64 ) );
+	 }
+	 
+	 return false;
+ 
+});
+
+
+$(function() {
+
+	$("form").validate({
+	
+		//Custom error class for parent div of element
+		highlight: function(element) {
+			$(element).parent().addClass("has-error");
+		},
+		unhighlight: function(element) {
+			$(element).parent().removeClass("has-error");
+		},
+		// Reglas de validación
+		rules: {
+			dni: {
+				validDni: true
+			},
+			habitacion: {
+				rangeHab: true
+			}
+		},
+		// Specify validation error messages
+		messages: {
+		  dni: {
+		  	validDni: "El DNI introducido no es vàlido"
+		  },
+		  habitacion: {
+			  rangeHab: "Habitaciones de la 1 a la 9 reservadas"
+		  }
+		},
+		// Make sure the form is submitted to the destination defined
+		// in the "action" attribute of the form when valid
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	});
+});
+
+	</script>
+</body>
+</html>

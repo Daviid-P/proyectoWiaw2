@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<title>Info visita</title>
+</head>
+<body class="container-fluid">	
+	<div th:if="${notPermit != null}" class="alert alert-danger">
+  		<ul>
+			<li th:text="${notPermit}">error</li> <!-- Troba els errors i els mostra -->
+		</ul>
+	</div>
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4>Información Visita <span th:text="${visita.id}"></span></h4>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>Fecha y hora: <span th:text="${#temporals.format(visita.fecha, 'dd/MM/yyyy')}"></span></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>Habitación: <span th:text="${visita.habitacion}"></span></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>Estado: <span th:text="${visita.estado}"></span></p>
+		</div>
+	</div>
+	<table class="table table-bordered">
+		<tr>
+			<th>Rol</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>DNI</th>
+			<th>Email</th>
+			<th>Teléfono</th>
+			<th>Otros</th>
+		</tr>
+		
+		<tr>
+			<th>Doctor</th>
+			<td th:text="${doctor.nombre}"></td>
+			<td th:text="${doctor.apellidos}"></td>
+			<td th:text="${doctor.dni}"></td>	
+			<td th:text="${doctor.email}"></td>
+			<td th:text="${doctor.telefono}"></td>			
+			<td>Especialidad: <span th:text="${doctor.especialidad}"></span></td>
+		</tr>
+		<tr>
+			<th>Paciente</th>
+			<td th:text="${paciente.nombre}"></td>
+			<td th:text="${paciente.apellidos}"></td>
+			<td th:text="${paciente.dni}"></td>	
+			<td th:text="${paciente.email}"></td>
+			<td th:text="${paciente.telefono}"></td>			
+			<td>
+				<a th:href="@{/expediente/{dni}(dni=${paciente.dni})}" class="btn btn-primary">
+					<span class='glyphicon glyphicon-list-alt'></span> Expediente Médico
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<th>Recepcionista</th>
+			<td th:text="${recepcionista.nombre}"></td>
+			<td th:text="${recepcionista.apellidos}"></td>
+			<td th:text="${recepcionista.dni}"></td>	
+			<td th:text="${recepcionista.email}"></td>
+			<td colspan="2" th:text="${recepcionista.telefono}"></td>
+		</tr>
+	</table>
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4>Observaciones:</h4>
+		</div>
+	</div>
+	<div th:if="${fin == 'no'}" class="row">
+		<div class="col-xs-12">
+			<p th:text="${visita.observaciones}"></p>
+		</div>
+		<div th:if="${visita.estado == 'Pendiente'}">
+			<a sec:authorize="hasRole('ROLE_RECEPCIONISTA')" th:href="@{/delVisita/{id}(id=${visita.id})}" class="btn btn-danger">
+				<span class='glyphicon glyphicon-remove'></span> Cancelar
+			</a>
+			<a  sec:authorize="hasRole('ROLE_DOCTOR')" th:href="@{/finVisita/{id}(id=${visita.id})}" class="btn btn-warning">
+				<span class='glyphicon glyphicon-ok'></span> Finalizar
+			</a>
+		</div>
+	</div>
+	<div th:if="${fin == 'yes'}" class="row">
+		<form id="formRegistro" method="post" action="#" th:action="@{/addObservaciones/{id}(id=${visita.id})}">
+			<div class="col-xs-12">
+				<textarea name="observaciones" rows="6" cols="50"></textarea>
+			</div>
+			<div class="col-md-12 col-sm-12" id="addblock">
+				<div class="form-group col-md-3 col-sm-3">
+					<input type='submit' class="btn btn-primary" value="Añadir"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back({
+	    	"scrollX": true,
+	    	"scrollY": true
+	    });
+	}	
+</script>
+</body>
+</html>

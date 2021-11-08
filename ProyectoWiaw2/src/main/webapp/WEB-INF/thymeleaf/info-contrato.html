@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<style type="text/css">
+
+
+.border-box{
+	outline: 1px solid black;
+}
+
+
+</style>
+	<title>Mostrar Contrato</title>
+</head>
+<body>
+<div th:replace="templates/header :: header"></div>
+
+<div class="panel panel-primary" style="margin:20px;">
+	<div class="panel-heading">
+			<h3 class="panel-title">Datos Contrato</h3>
+	</div>
+<div class="panel-body">	
+		<h4>Datos Empleado:</h4>
+		<div class="row" style="background-color:#ededed;">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-sm-2">
+						<h6>Nombre:</h6>
+						<p th:text="${empleado.nombre} + ' ' + ${empleado.apellidos}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>DNI:</h6>
+						<p th:text="${empleado.dni}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Fecha nacimiento:</h6>
+						<p th:text="${empleado.fecha_nacimiento}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Teléfono:</h6>
+						<p th:text="${empleado.telefono}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Email:</h6>
+						<p th:text="${empleado.email}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>CP/Dirección:</h6>
+						<p th:text="${empleado.codigoPostal} + ' ' + ${empleado.direccion}"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h4>Datos Contrato:</h4>
+		<div class="row" style="background-color:#ededed;">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-sm-2">
+						<h6>Fecha Inicio</h6>
+						<p th:text="${contrato.inicio}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Fecha Finalización:</h6>
+						<p th:text="${contrato.finContrato}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Sueldo:</h6>
+						<p th:text="${contrato.sueldo} + '€'"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Tipo Contrato:</h6>
+						<p th:text="${contrato.tipo}"></p>
+					</div>
+					<div class="col-sm-2">
+						<h6>Dias Vacaciones:</h6>
+						<p th:text="${contrato.dias_vacaciones}"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 text-right">
+			<a onclick="goBack()" class="btn btn-success">Volver</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}	
+</script>
+
+	<script type="text/javascript" th:src="@{/webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+</body>
+</html>

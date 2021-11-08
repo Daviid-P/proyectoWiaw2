@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	
+	<!-- Custom CSS -->
+	<link th:href="@{/resources/css/dcalendar.picker.css}" rel="stylesheet"/>
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
+	
+	<!-- Custom Fonts--> 
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/> 
+	
+	<!-- Data Tables -->
+	<link th:href="@{webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{webjars/datatables/1.10.13/css/dataTables.jqueryui.min.css}" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/dcalendar.picker.js}"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/javascript" th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/jquery-validation/1.15.1/jquery.validate.min.js}"></script>
+	
+	<title>Listado de Recepcionistas.</title>
+</head>
+<body class="container-fluid">	
+	<div th:replace="templates/header :: header" class="my-header"></div>
+	<h4> Listado de Recepcionistas.</h4>
+	
+	<table class="table table-bordered display" width="100%" id="tableRecep">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>DNI</th>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Email</th>
+				<th>Teléfono</th>
+				<th>CP - Dirección</th>
+				<th>Inicio Contrato</th>
+				<th>Fin Contrato</th>
+				<th>Fin Real</th>
+				<th>Sueldo</th>
+				<th>Días Vaca.</th>
+				<th>Tipo</th>
+				<th>Activo</th>
+				<th>Modificar Contrato</th>
+				<th>Finalizar/Refirmar Contrato</th>
+			</tr>
+		</thead>
+		<tbody>	
+			<tr th:each="recepcionista : ${recepcionistas}">
+				<td th:text="${recepcionista.id}"></td>
+				<td th:text="${recepcionista.dni}"></td>
+				<td th:text="${recepcionista.nombre}"></td>
+				<td th:text="${recepcionista.apellidos}"></td>
+				<td th:text="${recepcionista.email}"></td>
+				<td th:text="${recepcionista.telefono}"></td>
+				<td th:text="${recepcionista.codigoPostal} + ' - ' + ${recepcionista.direccion}"></td>
+				<td th:text="${recepcionista.contrato.inicio}"></td>
+				<td th:text="${recepcionista.contrato.finContrato}"></td>
+				<td th:text="${recepcionista.contrato.fin}"></td>
+				<td id="sueldo" th:text="${recepcionista.contrato.sueldo} + '€'"></td>
+				<td th:text="${recepcionista.contrato.dias_vacaciones}"></td>
+				<td th:text="${recepcionista.contrato.tipo}"></td>
+				<td th:if="${recepcionista.activo}" th:text="Activo" style="color: green;"></td>
+				<td th:if="${!recepcionista.activo}" th:text="Inactivo" style="color: red;"></td>
+				
+				<td th:if="${recepcionista.activo}">
+					<a th:href="@{/updateContrato/{dni}(dni=${recepcionista.dni})}" class="btn btn-warning" th:if="${recepcionista.contrato}">
+						<span class='glyphicon glyphicon-list-alt'></span> Modificar
+					</a>
+				</td>
+				<td th:if="${!recepcionista.activo}">-</td>
+				<td th:if="${recepcionista.activo}">
+					<a th:href="@{/finContrato/{dni}(dni=${recepcionista.dni})}" class="btn btn-danger">
+						<span class='glyphicon glyphicon-remove'></span> Finalizar
+					</a>
+				</td>
+				<td th:if="${!recepcionista.activo}">
+					<a th:href="@{/reContrato/{dni}(dni=${recepcionista.dni})}" class="btn btn-success">
+						<span class='glyphicon glyphicon-ok'></span> Recontratar
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="row">
+		<p th:text="'Total Recepcionistas: ' + ${recepTotal}"></p>
+	</div>
+	<div class="row">
+		<p th:text="'Total Sueldo Recepcionistas: ' + ${sueldoTotal}+'€'"></p>
+	</div>
+	
+	
+	<!-- Data Tables -->
+	<script type="text/javascript" th:src="@{webjars/datatables/1.10.13/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js}"></script>
+	
+	<script type="text/javascript">
+	function goBack() {
+	    window.history.back();
+	}
+	
+	$(document).ready(function() {
+	    $("#tableRecep").DataTable({
+	    	"scrollX": true,
+	    	"scrollY": true
+	    });
+	} );
+</script>
+</body>
+</html>
